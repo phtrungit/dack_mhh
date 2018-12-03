@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './component/App';
+import App from './App';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './plugins/OwlCarousel2-2.2.1/owl.carousel.css';
 import './plugins/OwlCarousel2-2.2.1/owl.theme.default.css';
@@ -35,7 +35,7 @@ render()
 // Hot reloading
 if (module.hot) {
     // Reload components
-    module.hot.accept('./component/App', () => {
+    module.hot.accept('./App', () => {
         render()
     })
 
