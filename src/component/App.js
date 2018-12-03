@@ -1,26 +1,19 @@
-import React, { Component } from 'react';
-import '../App.css';
-import HeaderComponent from './HeaderComponent'
-import HomeComponent from './HomeComponent'
-import PopularComponent from './PopularComponent'
-import RegisterComponent from './RegisterComponent'
-import ServiceComponent from './ServiceComponent'
-import EventsComponent from './EventsComponent'
-import FoooterComponent from'./FoooterComponent'
-class App extends Component {
-  render() {
+import React from 'react'
+import PropTypes from 'prop-types'
+import { ConnectedRouter } from 'connected-react-router'
+import routes from '../routes'
+
+
+const App = ({ history }) => {
     return (
-      <div className="App">
-        <HeaderComponent></HeaderComponent>
-        <HomeComponent></HomeComponent>
-        <PopularComponent></PopularComponent>
-        <RegisterComponent></RegisterComponent>
-        <ServiceComponent></ServiceComponent>
-        <EventsComponent></EventsComponent>
-        <FoooterComponent></FoooterComponent>
-      </div>
-    );
-  }
+        <ConnectedRouter history={history}>
+            { routes }
+        </ConnectedRouter>
+    )
 }
 
-export default App;
+App.propTypes = {
+    history: PropTypes.object,
+}
+
+export default App
