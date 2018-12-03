@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import Background from '../images/slider_background.jpg';
 
 class HomeComponent extends Component {
     render() {
@@ -11,8 +11,9 @@ class HomeComponent extends Component {
                         <div className="hero_slider owl-carousel">
                             {/* Hero Slide */}
                             <div className="hero_slide">
-                                <div className="hero_slide_background" 
-                                s    style ={ { backgroundImage: "url(''../images/slider_background.jpg')" } }></div>
+                                <div className="hero_slide_background"
+                                // Doan nay cai backgroundImage no ko hien ra hinh
+                                    style={ { backgroundImage: "url('../images/slider_background.jpg')" } } />
                                 <div className="hero_slide_container d-flex flex-column align-items-center justify-content-center">
                                     <div className="hero_slide_content text-center">
                                         <h1 data-animation-in="fadeInUp" data-animation-out="animate-out fadeOut">Get your <span>Education</span> today!</h1>
@@ -21,8 +22,8 @@ class HomeComponent extends Component {
                             </div>
                             {/* Hero Slide */}
                             <div className="hero_slide">
-                                <div className="hero_slide_background" 
-                                    style ={ { backgroundImage: "url(''../images/slider_background.jpg')" } }></div>
+                                <div className="hero_slide_background"
+                                    style={{ backgroundImage: "url(''../images/slider_background.jpg')" }}></div>
                                 <div className="hero_slide_container d-flex flex-column align-items-center justify-content-center">
                                     <div className="hero_slide_content text-center">
                                         <h1 data-animation-in="fadeInUp" data-animation-out="animate-out fadeOut">Get your <span>Education</span> today!</h1>
@@ -31,8 +32,8 @@ class HomeComponent extends Component {
                             </div>
                             {/* Hero Slide */}
                             <div className="hero_slide">
-                                <div className="hero_slide_background" 
-                                 style ={ { backgroundImage: "url(''../images/slider_background.jpg')" } }></div>
+                                <div className="hero_slide_background"
+                                    style={{ backgroundImage: "url(''../images/slider_background.jpg')" }}></div>
                                 <div className="hero_slide_container d-flex flex-column align-items-center justify-content-center">
                                     <div className="hero_slide_content text-center">
                                         <h1 data-animation-in="fadeInUp" data-animation-out="animate-out fadeOut">Get your <span>Education</span> today!</h1>
@@ -51,7 +52,7 @@ class HomeComponent extends Component {
                             <div className="row">
                                 <div className="col-lg-4 hero_box_col">
                                     <div className="hero_box d-flex flex-row align-items-center justify-content-start">
-                                    <img src={require('../images/earth-globe.svg')} className="svg" alt />
+                                        <img src={require('../images/earth-globe.svg')} className="svg" alt />
                                         <div className="hero_box_content">
                                             <h2 className="hero_box_title">Online Courses</h2>
                                             <a href="courses.html" className="hero_box_link">view more</a>
@@ -60,7 +61,7 @@ class HomeComponent extends Component {
                                 </div>
                                 <div className="col-lg-4 hero_box_col">
                                     <div className="hero_box d-flex flex-row align-items-center justify-content-start">
-                                    <img src={require('../images/books.svg')} className="svg" alt />
+                                        <img src={require('../images/books.svg')} className="svg" alt />
                                         <div className="hero_box_content">
                                             <h2 className="hero_box_title">Our Library</h2>
                                             <a href="courses.html" className="hero_box_link">view more</a>
@@ -69,7 +70,7 @@ class HomeComponent extends Component {
                                 </div>
                                 <div className="col-lg-4 hero_box_col">
                                     <div className="hero_box d-flex flex-row align-items-center justify-content-start">
-                                    <img src={require('../images/professor.svg')} className="svg" alt />
+                                        <img src={require('../images/professor.svg')} className="svg" alt />
                                         <div className="hero_box_content">
                                             <h2 className="hero_box_title">Our Teachers</h2>
                                             <a href="teachers.html" className="hero_box_link">view more</a>
