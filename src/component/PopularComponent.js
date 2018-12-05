@@ -9,7 +9,7 @@ class PopularComponent extends Component {
           <div className="row">
             <div className="col">
               <div className="section_title text-center">
-                <h1>Popular Courses</h1>
+                <h1>Khóa học phổ biến</h1>
               </div>
             </div>
           </div>
