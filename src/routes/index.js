@@ -4,7 +4,7 @@ import HomePage from '../component/HomePageComponent'
 import PopularComponent from "../component/PopularComponent";
 import Singin from '../component/SignInComponent'
 import Singup from '../component/SignUpComponent'
-
+import ListExam from '../component/ListExamComponent'
 const routes = (
     <div>
         <Switch>
@@ -12,6 +12,7 @@ const routes = (
             <Route path="/popular" component={PopularComponent} />
             <Route path="/signin" component={Singin} />
             <Route path="/signup" component={Singup} />
+            <Route path="/list-exam" component={ListExam} />
         </Switch>
     </div>
 )
