@@ -5,6 +5,7 @@ import PopularComponent from "../component/PopularComponent";
 import Singin from '../component/SignInComponent'
 import Singup from '../component/SignUpComponent'
 import ListExam from '../component/ListExamComponent'
+import MyTest from '../component/MyTestComponent'
 const routes = (
     <div>
         <Switch>
@@ -13,6 +14,7 @@ const routes = (
             <Route path="/signin" component={Singin} />
             <Route path="/signup" component={Singup} />
             <Route path="/list-exam" component={ListExam} />
+            <Route path="/myex" component={MyTest} />
         </Switch>
     </div>
 )
