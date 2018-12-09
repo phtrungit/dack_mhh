@@ -1,7 +1,12 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 import Background from '../images/slider_background.jpg';
 
 class HomeComponent extends Component {
+    componentDidMount(){
+        axios.get('http://localhost:4200/')
+            .then(res => console.log(res));
+    }
     render() {
         return (
             <div className="HomeComponent">
