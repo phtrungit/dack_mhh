@@ -5,6 +5,7 @@
 .test_center{
 	text-align: center;
 }
+
 .test_right{
 	text-align: right;
 }
@@ -34,17 +35,17 @@
 
 .khung{
 	border: 2px solid gray;
-	
+
 }
 
 .khung2{
 	border: 0.5px solid black;
-	
+
 }
 
 .khung3{
 	border: 1px solid gray;
-	
+
 }
 
 
@@ -73,7 +74,7 @@
 
 .noi_dung{
 		font-size: 15px;
-	
+
 	color: black;
 }
 
@@ -90,4 +91,9 @@
 .mr-30{
 
 	margin-right: 30px;
+}
+
+.answers{
+	background-color: red;
+	margin-right: 60px;
 }
