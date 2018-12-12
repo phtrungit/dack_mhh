@@ -968,6 +968,8 @@ section
 	height: 46px;
 	border-radius: 50%;
 	overflow: hidden;
+	margin-left: 10px;
+	margin-right: 10px
 }
 .course_author_name
 {

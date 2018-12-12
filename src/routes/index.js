@@ -5,7 +5,7 @@ import PopularComponent from "../component/PopularComponent";
 import Singin from '../component/SignInComponent'
 import Singup from '../component/SignUpComponent'
 import ListExam from '../component/ListExamComponent'
-import MyTest from '../component/MyTestComponent'
+import MyTest from '../component/studentComponent/MyTestComponent'
 import TestComponent from '../component/TakeATest'
 import CreateTestComponent from '../component/CreateTest'
 const routes = (
