@@ -13,7 +13,7 @@ class HomePageComponent extends Component {
             <div className="App">
                 <HeaderComponent></HeaderComponent>
                 <HomeComponent></HomeComponent>
-            
+
 
                <div class="row">
                                 <div class="col-sm-2">
