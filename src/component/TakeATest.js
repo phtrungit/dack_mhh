@@ -7,13 +7,16 @@ import axios from 'axios';
 
 var listExam = [{ "_id": "5c16635508943720ec5056fb", "id": "QT0001", "examId": "EX0001", "text": "Gía trị của biểu thức x=...+y/abs(z)", "optionA": "Câu A", "optionB": "Câu B", "optionC": "Câu C", "optionD": "Câu D", "correctOption": "A", "point": "0.5", "__v": 0 }];
 var title = [{"_id":"5c11f9b5d059693da8f5fbbf","id":"EX0001","title":"Bài thi toán cao cấp 01","creator":"TC0001","subject":"Toán","time":"45 phút","object":"Học sinh lớp 10","__v":0}];
+var listAnswer = [];
 
 class TestComponent extends Component {
     constructor(props) {
         super(props);
+        this.SubmitTest = this.SubmitTest.bind(this);
+        this.handleOptionChange = this.handleOptionChange.bind(this);
         this.state = {
             exam: listExam,
-            titleExam: title
+            titleExam: title,
         };
     }
 
@@ -32,10 +35,32 @@ class TestComponent extends Component {
       
     }
 
+    handleOptionChange(changeEvent){
+        console.log(listAnswer);
+        for(var i = 0;i< listAnswer.length;i++){
+            if( changeEvent.target.name === listAnswer[i].id){
+                listAnswer[i].value = changeEvent.target.value; 
+                return;
+            }
+        };
 
+        var data = {
+            id: changeEvent.target.name,
+            value: changeEvent.target.value
+        }
 
-    createATestContent = () => {
+        listAnswer.push(data);
 
+    }
+
+    SubmitTest = () => {
+        fetch('http://localhost:4200/updateResultTest',{
+            method: 'POST',
+            body: JSON.stringify(listAnswer),
+            headers: {
+                'Content-Type': 'application/json'
+            },
+        })
     }
 
     render() {
@@ -60,10 +85,7 @@ class TestComponent extends Component {
                                 <li>Số lượng: {this.state.exam.length} câu</li>
                                 <li>Đối tượng: {this.state.titleExam[0].object}</li>
                             </ul>
-
                         </div>
-
-
                     </div>
                     <div className="col-xs-7 col-sm-7 col-md-7 col-lg-7 mt-30 khung">
                         <div className="test_center mt-3"><h3>Đề thi mã #{this.state.exam[0].examId}</h3></div>
@@ -77,20 +99,20 @@ class TestComponent extends Component {
                                 </pre>
                                 <br></br>
                                 <div className="ml-5 dap-an">
-                                    <input type="radio" id="Fastlearning" name={exam.id}></input>
+                                    <input type="radio" id="Fastlearning" name = {exam.id} value='A' onChange={this.handleOptionChange}></input>
                                     <label for="Fastlearning">&nbsp; &nbsp;{exam.optionA}</label><br />
-                                    <input type="radio" name={exam.id}></input>
+                                    <input type="radio" name = {exam.id} value = 'B' onChange={this.handleOptionChange}></input>
                                     <label>&nbsp; &nbsp;{exam.optionB}</label><br />
-                                    <input type="radio" name={exam.id}></input>
+                                    <input type="radio" name = {exam.id} value='C' onChange={this.handleOptionChange}></input>
                                     <label>&nbsp; &nbsp;{exam.optionC}</label> <br />
-                                    <input type="radio" name={exam.id}></input>
+                                    <input type="radio" name = {exam.id} value = 'D'  onChange={this.handleOptionChange}></input>
                                     <label>&nbsp; &nbsp;{exam.optionD}</label>
                                 </div>
                             </div>
                         })}</div>
                       
                         <div className="test_center">
-                            <button className="button">Hoàn thành</button>
+                            <button className="button" onClick = {this.SubmitTest}>Hoàn thành</button>
                         </div>
 
 

@@ -1,12 +1,24 @@
 const express = require('express');
 const app = express();
 const indexRouter = express.Router();
-/*const User =require('../models/users');
-const Product =require('../models/products');*/
+const Questions =require('../models/questions');
+const Exams = require('../models/exams');
+const bodyParser = require('body-parser');
+
+app.use(bodyParser.urlencoded({
+  extended: true,
+  limit: '50mb',
+  parameterLimit: 100000
+}))
+
+app.use(bodyParser.json({
+  limit: '50mb',
+  parameterLimit: 100000
+}))
 
 
 /* GET home page. */
-/*indexRouter.route('/').get(function (req, res) {
+/*indexRouter.route('/user').get(function (req, res) {
     User.find(function (err, serverports){
         if(err){
             console.log(err);
@@ -28,4 +40,34 @@ indexRouter.route('/product').get(function (req, res) {
     });
 });*/
 
+
+// -------------------- Lấy nội dung bài test bằng id ----------------
+indexRouter.route('/getTestExam').get(function (req, res) {
+    var id = req.query.id;
+    Questions.find({ examId: id }, function (err, serverports){
+        if(err){
+            console.log(err);
+        }
+        else {
+            Exams.find({ id: id }, function (err, data){
+                if(err){
+                    console.log(err);
+                }
+                else {
+                    var result = {
+                        data: serverports,
+                        title: data
+                    }
+                    res.json(result);
+                }
+            })
+        }
+    });
+});
+
+
+//---------------------Cập nhật đáp án bài thi-----------------
+indexRouter.route('/updateResultTest').post(function(req,res){
+    console.log(req.body);
+})
 module.exports = indexRouter;
