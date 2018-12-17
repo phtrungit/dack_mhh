@@ -5,38 +5,48 @@ import FoooterComponent from './FoooterComponent.js'
 import '../styles/test_styles.css'
 import axios from 'axios';
 
-var listExam = [{
-    
-}];
-var a = "aaaaa";
+var listExam = [{ "_id": "5c16635508943720ec5056fb", "id": "QT0001", "examId": "EX0001", "text": "Gía trị của biểu thức x=...+y/abs(z)", "optionA": "Câu A", "optionB": "Câu B", "optionC": "Câu C", "optionD": "Câu D", "correctOption": "A", "point": "0.5", "__v": 0 }];
+var title = [{"_id":"5c11f9b5d059693da8f5fbbf","id":"EX0001","title":"Bài thi toán cao cấp 01","creator":"TC0001","subject":"Toán","time":"45 phút","object":"Học sinh lớp 10","__v":0}];
+
 class TestComponent extends Component {
-    constructor(props){
+    constructor(props) {
         super(props);
         this.state = {
             exam: listExam,
-            a: 1
+            titleExam: title
         };
     }
 
     componentDidMount() {
-        axios.get('http://localhost:4200/aaa?id=EX0001')
-            .then(res => {
-                var data = res.data;
-                this.setState({
-                    exam: data,
-                })
-                console.log(this.state.exam[0].id);
-            });
+        axios.get('http://localhost:4200/getTestExam?id=EX0001')
+        .then(res => {
+            var data = res.data;
+          
+            this.setState({
+                exam: data.data,
+                titleExam: res.data.title
+            })
+            console.log(this.state.exam.length);
+        });
+
+      
+    }
+
+
+
+    createATestContent = () => {
+
     }
 
     render() {
+
         return (
 
             <div className="container mt-30 color_black ">
                 <div className="row ">
                     <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                         <div className="test_center">
-                            <h2>Bài thi trắc nghiệm Tiếng Anh lớp 10</h2>
+                            <h2>{this.state.titleExam[0].title}</h2>
                         </div>
                     </div>
 
@@ -46,10 +56,9 @@ class TestComponent extends Component {
                             </div>
                         <div className="cau_hoi noi_dung">
                             <ul>
-                                <li>Thời gian: 45 phút</li>
-                                <li>Số lượng: 20 câu</li>
-                                <li>Kiến thức: C/C++</li>
-                                <li>Đối tượng: học sinh lớp 10</li>
+                                <li>Thời gian: {this.state.titleExam[0].time}</li>
+                                <li>Số lượng: {this.state.exam.length} câu</li>
+                                <li>Đối tượng: {this.state.titleExam[0].object}</li>
                             </ul>
 
                         </div>
@@ -57,68 +66,29 @@ class TestComponent extends Component {
 
                     </div>
                     <div className="col-xs-7 col-sm-7 col-md-7 col-lg-7 mt-30 khung">
-                        <div className="test_center mt-3"><h3>Đề thi mã #134</h3></div>
+                        <div className="test_center mt-3"><h3>Đề thi mã #{this.state.exam[0].examId}</h3></div>
                         <br></br>
-                        <div className="cau_hoi ml-5">
-                            <p className="cau_hoi2">{this.state.a}</p>
-                            <pre>
-                                {`
-                #include < studio.h>       
-                main() 
-                {
-                   int x = 5;
-                   
-                   if(x=5)
-                   {    
-                      if(x=5) printf("Fast");
-                   } 
-                   printf("learning");
-                }
-                            `}
-                            </pre>
-                            <br></br>
-                            <div className="ml-5">
-                                <input type="radio" id="Fastlearning" name="question2"></input>
-                                <label for="Fastlearning">&nbsp; &nbsp;A. Fastlearning</label><br />
-                                <input type="radio" name="question2"></input>
-                                <label>&nbsp; &nbsp;B. learning</label><br />
-                                <input type="radio" name="question2"></input>
-                                <label>&nbsp; &nbsp;C. learningFast</label> <br />
-                                <input type="radio" name="question2"></input>
-                                <label>&nbsp; &nbsp;D. Fast</label>
+                        {/* Danh sach cau hoi */}
+                        <p className="cau_hoi2">Tìm đáp án đúng của câu hỏi sau</p>
+                        <div>{this.state.exam.map((exam) => {
+                            return <div className="cau_hoi ml-5">
+                                <pre>
+                                    {exam.id}: {exam.text}
+                                </pre>
+                                <br></br>
+                                <div className="ml-5 dap-an">
+                                    <input type="radio" id="Fastlearning" name={exam.id}></input>
+                                    <label for="Fastlearning">&nbsp; &nbsp;{exam.optionA}</label><br />
+                                    <input type="radio" name={exam.id}></input>
+                                    <label>&nbsp; &nbsp;{exam.optionB}</label><br />
+                                    <input type="radio" name={exam.id}></input>
+                                    <label>&nbsp; &nbsp;{exam.optionC}</label> <br />
+                                    <input type="radio" name={exam.id}></input>
+                                    <label>&nbsp; &nbsp;{exam.optionD}</label>
+                                </div>
                             </div>
-                        </div>
-                        {/* câu hỏi*/}
-                        <div className="cau_hoi ml-5">
-                            <p className="cau_hoi2">Câu 2: Tìm đáp án đúng của câu hỏi sau</p>
-                            <pre>
-                                {`
-                #include < iostream>       
-                main() 
-                {
-                   int x = 5;
-                   
-                   if(x=5)
-                   {    
-                      x++;
-                   } 
-                   cout<< x ;
-                }
-                            `}
-                            </pre>
-                            <br></br>
-                            <div className="ml-5">
-                                <input type="radio" id="Fastlearning" name="question1"></input>
-                                <label for="Fastlearning">&nbsp; &nbsp;A. 2</label><br />
-                                <input type="radio" name="question1"></input>
-                                <label>&nbsp; &nbsp;B. 4</label><br />
-                                <input type="radio" name="question1"></input>
-                                <label>&nbsp; &nbsp;B. 5</label> <br />
-                                <input type="radio" name="question1"></input>
-                                <label>&nbsp; &nbsp;D. 6</label>
-                            </div>
-                        </div>
-                        {/* câu hỏi*/}
+                        })}</div>
+                      
                         <div className="test_center">
                             <button className="button">Hoàn thành</button>
                         </div>
