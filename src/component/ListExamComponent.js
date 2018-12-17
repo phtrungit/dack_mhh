@@ -25,7 +25,6 @@ const styles = theme => ({
         fontSize:'50px',
         textAlign:'center',
         color:'#000000',
-
     },
 });
 
@@ -45,17 +44,20 @@ const rows = [
 
 ];
 
-function SimpleTable(props) {
-    const { classes } = props;
+class SimpleTable extends React.Component{
+    constructor(props){
+        super(props);
+    }
 
-    return (
+    render(){
+        return (
         <div>
             <Header/>
-            <div className={classes.title}>
+            <div className={styles.title}>
                 Danh sách đề thi
             </div>
-            <Paper className={classes.root}>
-                <Table className={classes.table}>
+            <Paper className={styles.root}>
+                <Table className={styles.table}>
                     <TableHead>
                         <TableRow>
                             <TableCell>Mã đề thi</TableCell>
@@ -91,9 +93,6 @@ function SimpleTable(props) {
 
     );
 }
-
-SimpleTable.propTypes = {
-    classes: PropTypes.object.isRequired,
-};
+}
 
 export default withStyles(styles)(SimpleTable);
