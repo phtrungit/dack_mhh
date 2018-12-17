@@ -8,8 +8,9 @@ import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
-import Header from './HeaderComponent'
-import Footer from './FoooterComponent'
+import Header from './HeaderComponent';
+import Footer from './FoooterComponent';
+import axios from 'axios';
 const styles = theme => ({
     root: {
         width: '100%',
@@ -28,41 +29,48 @@ const styles = theme => ({
     },
 });
 
-let id = 0;
-function createData(made, tende, ngaytao, nguoitao) {
-    id += 1;
-    return { id,made, tende, ngaytao, nguoitao};
-}
-
 const rows = [
-    createData('D001', 'Trắc nghiệm toán nâng cao', '06/12/2018 9:49', 'Trung Phạm'),
-    createData('D001', 'Trắc nghiệm toán nâng cao', '06/12/2018 9:49', 'Trung Phạm'),
-    createData('D001', 'Trắc nghiệm toán nâng cao', '06/12/2018 9:49', 'Trung Phạm'),
-    createData('D001', 'Trắc nghiệm toán nâng cao', '06/12/2018 9:49', 'Trung Phạm'),
-    createData('D001', 'Trắc nghiệm toán nâng cao', '06/12/2018 9:49', 'Trung Phạm'),
-
-
+    {id: 'D001', title: 'Trắc nghiệm toán nâng cao', creator:'Trung Phạm'}
 ];
 
 class SimpleTable extends React.Component{
     constructor(props){
         super(props);
+        this.state = {
+            exam: rows,
+            titleExam: 'null'
+        }
+    }
+
+    componentDidMount() {
+        axios.get('http://localhost:4200/selectAllExam')
+        .then(res => {
+            var data = res.data;
+            this.setState({
+                exam: data.data,
+                titleExam: res.data.teacher
+            })
+            console.log(this.state.titleExam[0].displayName);
+        });
+
+      
     }
 
     render(){
+        const {classes}=this.props;
         return (
         <div>
             <Header/>
-            <div className={styles.title}>
+            <div className={classes.title}>
                 Danh sách đề thi
             </div>
-            <Paper className={styles.root}>
-                <Table className={styles.table}>
+            <Paper className={classes.root}>
+                <Table className={classes.table}>
                     <TableHead>
                         <TableRow>
                             <TableCell>Mã đề thi</TableCell>
                             <TableCell >Tên đề thi</TableCell>
-                            <TableCell >Thời gian tạo</TableCell>
+            
                             <TableCell >Người tạo</TableCell>
                             <TableCell >Action</TableCell>
                         </TableRow>
@@ -72,11 +80,11 @@ class SimpleTable extends React.Component{
                             return (
                                 <TableRow key={row.id}>
                                     <TableCell component="th" scope="row">
-                                        {row.made}
+                                        {this.state.exam[0].id}
                                     </TableCell>
-                                    <TableCell>{row.tende}</TableCell>
-                                    <TableCell >{row.ngaytao}</TableCell>
-                                    <TableCell >{row.nguoitao}</TableCell>
+                                    <TableCell> {this.state.exam[0].title}</TableCell>
+                                   
+                                    <TableCell >{this.state.titleExam[0].displayName}</TableCell>
                                     <TableCell>
                                         <Button color="primary">
                                             Làm bài
