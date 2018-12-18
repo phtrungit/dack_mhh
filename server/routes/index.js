@@ -3,9 +3,11 @@ const app = express();
 const indexRouter = express.Router();
 const Questions = require('../models/questions');
 const Exams = require('../models/exams');
+const Student = require('../models/students');
+
 const Teacher = require('../models/teachers');
 const bodyParser = require('body-parser');
-
+const passport = require('../passport')
 app.use(bodyParser.urlencoded({
     extended: true,
     limit: '50mb',
@@ -95,5 +97,89 @@ indexRouter.route('/selectAllExam').get((req, res) => {
                 ;
         }
     })
+})
+indexRouter.route('/login').post(function (req, res,next) {
+    console.log(req.body);
+    let user=null;
+    Student.findOne({ 'username': req.body.username }, (err, userStudentMatch) => {
+        if (err) {return}
+        if (!userStudentMatch) {
+            Teacher.findOne({ 'username': req.body.username }, (err, userTeacherMatch) => {
+                if (err) {
+                    return
+                }
+                if (userTeacherMatch && req.body.password==userTeacherMatch.password) {
+                    console.log('userTeacherMatch')
+                    user=userTeacherMatch
+                    return res.json({user:user});
+                }
+            })
+
+        }
+        else if(req.body.password===userStudentMatch.password) {
+            console.log('userStudentMatch')
+            user=userStudentMatch
+            return res.json({user:user});
+        }
+    })
+
+});
+indexRouter.route('/signup').post(function (req,res,next) {
+    console.log('reqbodySignUp',req.body);
+    if(req.body.role==='student')
+    {
+        Student.findOne({ username: req.body.username }, (err, user) => {
+            if (err) {
+                console.log('User.js post error: ', err)
+            } else if (user) {
+                res.json({
+                    error: `Sorry, already a user with the username: ${username}`
+                })
+            }
+            else {
+                const student = new Student({
+                    id: 'ST'+req.body.username,
+                    displayName: req.body.name,
+                    mail: req.body.mail,
+                    username: req.body.username,
+                    password: req.body.password,
+                    point: 0,
+                    phone: req.body.phone,
+                })
+                student.save((err, savedUser) => {
+                    if (err) return res.json(err)
+                    res.json({user:savedUser})
+                })
+            }
+        })
+    }else
+    {
+        Teacher.findOne({ username: req.body.username }, (err, user) => {
+            if (err) {
+                console.log('User.js post error: ', err)
+            } else if (user) {
+                res.json({
+                    error: `Sorry, already a user with the username: `
+                })
+            }
+            else {
+                const teacher = new Teacher({
+                    id: 'ST'+req.body.username,
+                    displayName: req.body.name,
+                    mail: req.body.mail,
+                    username: req.body.username,
+                    password: req.body.password,
+                    point: 0,
+                    certificate:'Thạc sĩ',
+                    phone: req.body.phone,
+                })
+                teacher.save((err, savedUser) => {
+                    if (err) return res.json(err)
+                    res.json({user:savedUser})
+                })
+            }
+        })
+    }
+
 })
 module.exports = indexRouter;

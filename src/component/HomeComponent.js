@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux'
 import axios from 'axios';
 import Background from '../images/slider_background.jpg';
 
 class HomeComponent extends Component {
     componentDidMount(){
-        axios.get('http://localhost:4200/')
-            .then(res => console.log(res));
+
     }
     render() {
+        console.log('user',this.props.users);
         return (
             <div className="HomeComponent">
                 <div className="home">
@@ -91,5 +92,12 @@ class HomeComponent extends Component {
         );
     }
 }
+const mapStateToProps =(state) =>{
 
-export default HomeComponent;
+
+        return{
+            users: state.auth.currentUser
+        };
+
+}
+export default connect(mapStateToProps)(HomeComponent);

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {connect} from "react-redux";
 
 class HeaderTeacher extends Component {
     render() {
@@ -24,7 +25,7 @@ class HeaderTeacher extends Component {
                         </div>
                         <div className="main_nav navbar-right">
                             <ul className="main_nav_list">
-                                <li className="main_nav_item"><a href="#">Tên Giáo Viên</a></li>
+                                <li className="main_nav_item"><a href="#">{this.props.users.displayName}</a></li>
                                 <li className="main_nav_item"><a href="#">Đăng xuất</a></li>
                             </ul>
                         </div>
@@ -43,7 +44,14 @@ class HeaderTeacher extends Component {
         );
     }
 }
+const mapStateToProps =(state) =>{
 
-export default HeaderTeacher;
+
+    return{
+        users: state.auth.currentUser
+    };
+
+}
+export default connect(mapStateToProps)(HeaderTeacher) ;
 
 

@@ -1,18 +1,18 @@
 import React, { Component } from 'react';
 import HeaderTeacher from './HeaderTeacher';
-import listExamTeacher from './ListExamTeacher';
+//import listExamTeacher from './ListExamTeacher';
 import PopularComponent from './PopularComponent'
 import RegisterComponent from './RegisterComponent'
 import ServiceComponent from './ServiceComponent'
 import EventsComponent from './EventsComponent'
 import FoooterComponent from'./FoooterComponent'
 import SearchComponent from './SearchComponent'
-class TeacherAdministerExamQuestions extends Component {
+class HomePageTeacher extends Component {
   render() {
     return (
       <div className="App">
         <HeaderTeacher></HeaderTeacher>
-        <listExamTeacher></listExamTeacher>
+        /*<listExamTeacher></listExamTeacher>*/
 
         <SearchComponent></SearchComponent>
         <PopularComponent></PopularComponent>
@@ -25,4 +25,4 @@ class TeacherAdministerExamQuestions extends Component {
   }
 }
 
-export default TeacherAdministerExamQuestions;
+export default HomePageTeacher;

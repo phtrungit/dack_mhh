@@ -1,6 +1,7 @@
 import React from 'react'
 import { Route, Switch } from 'react-router'
-import HomePage from '../component/HomePageComponent'
+import HomePageTeacher from '../component/HomePageTeacher'
+import HomePageStudent from '../component/HomePageStudent'
 import PopularComponent from "../component/PopularComponent";
 import Singin from '../component/SignInComponent'
 import Singup from '../component/SignUpComponent'
@@ -11,9 +12,10 @@ import CreateTestComponent from '../component/CreateTest'
 const routes = (
     <div>
         <Switch>
-            <Route exact path="/" component={HomePage} />
+            <Route exact path="/" component={HomePageStudent} />
+            <Route exact path="/t" component={HomePageTeacher} />
             <Route path="/popular" component={PopularComponent} />
-            <Route path="/signin" component={Singin} />
+            <Route path="/login" component={Singin} />
             <Route path="/signup" component={Singup} />
             <Route path="/list-exam" component={ListExam} />
             <Route path="/myex" component={MyTest} />

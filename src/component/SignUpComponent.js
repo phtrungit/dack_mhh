@@ -15,6 +15,9 @@ import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import withStyles from '@material-ui/core/styles/withStyles';
 import FormLabel from '@material-ui/core/FormLabel';
+import axios from "axios/index";
+import { Redirect} from 'react-router-dom'
+
 const styles = theme => ({
     main: {
         width: 'auto',
@@ -55,82 +58,135 @@ const styles = theme => ({
     }
 });
 
-class SignIn extends React.Component
+class SignUp extends React.Component
 {
-    state = {
-        value: 'female',
-    };
+    constructor() {
+        super()
+        this.state = {
+            username: '',
+            password: '',
+            email:'',
+            name:'',
+            phone:'',
+            role:'',
+        }
 
-    handleChange = event => {
-        this.setState({ value: event.target.value });
-    };
+        this.handleSubmit = this.handleSubmit.bind(this)
+        this.handleChange = this.handleChange.bind(this)
+    }
+
+    handleChange(event) {
+        this.setState({
+            [event.target.name]: event.target.value
+        })
+    }
+
+    handleSubmit(event) {
+        event.preventDefault()
+        console.log('handleSubmit')
+        axios
+            .post('http://localhost:4200/signup', {
+                username:this.state.username,
+                password:this.state.password,
+                email:this.state.email,
+                name:this.state.name,
+                phone:this.state.phone,
+                role:this.state.role,
+            })
+            .then(response => {
+                console.log('response',response)
+                if (response.data.user) {
+                        this.setState({
+                            redirectTo: '/login'
+                        })
+                }else {
+                    console.log("errorSignUp")
+                    alert( response.data.error)
+                }
+            })
+    }
 
     render()
     {
         const { classes } = this.props;
-
-        return (
-            <main className={classes.main}>
-                <CssBaseline />
-                <Paper className={classes.paper}>
-                    <Avatar className={classes.avatar}>
-                        <LockIcon />
-                    </Avatar>
-                    <Typography component="h1" variant="h5">
-                        Sign up
-                    </Typography>
-                    <form className={classes.form}>
-                        <FormControl className={classes.roleForm} >
-                            <FormLabel component="legend">You are</FormLabel>
-                            <RadioGroup
-                                aria-label="You are"
-                                name="Role"
-                                value={this.state.value}
-                                onChange={this.handleChange}
-                                className={classes.group}
-                            >
-                                <FormControlLabel value="teacher" control={<Radio />} label="Teacher" />
-                                <FormControlLabel value="student" control={<Radio />} label="Student" />
-                            </RadioGroup>
-                        </FormControl>
-                        <FormControl margin="normal" required fullWidth>
-                            <InputLabel htmlFor="email">Email Address</InputLabel>
-                            <Input id="email" name="email" autoComplete="email" autoFocus />
-                        </FormControl>
-                        <FormControl margin="normal" required fullWidth>
-                            <InputLabel htmlFor="password">Password</InputLabel>
-                            <Input name="password" type="password" id="password" autoComplete="current-password" />
-                        </FormControl>
-                        <FormControl margin="normal" required fullWidth>
-                            <InputLabel htmlFor="password">Confirm password</InputLabel>
-                            <Input name="confirmPassword" type="password" id="confirmPassword" autoComplete="current-password" />
-                        </FormControl>
-                        <FormControl margin="normal" required fullWidth>
-                            <InputLabel >Your name</InputLabel>
-                            <Input id="name" name="name"  />
-                        </FormControl>
-                        <FormControl margin="normal" fullWidth>
-                            <InputLabel >Your mobile phone</InputLabel>
-                            <Input id="phone" name="phone" />
-                        </FormControl>
-                        <Button
-                            type="submit"
-                            fullWidth
-                            variant="contained"
-                            color="primary"
-                            className={classes.submit}
-                        >
+        if (this.state.redirectTo) {
+            return <Redirect to={{ pathname: this.state.redirectTo }} />
+        } else {
+            return (
+                <main className={classes.main}>
+                    <CssBaseline/>
+                    <Paper className={classes.paper}>
+                        <Avatar className={classes.avatar}>
+                            <LockIcon/>
+                        </Avatar>
+                        <Typography component="h1" variant="h5">
                             Sign up
-                        </Button>
-                    </form>
-                </Paper>
-            </main>
-        );
+                        </Typography>
+                        <form className={classes.form}>
+                            <FormControl className={classes.roleForm}>
+                                <FormLabel component="legend">You are</FormLabel>
+                                <RadioGroup
+                                    aria-label="You are"
+                                    name="role"
+                                    value={this.state.role}
+                                    onChange={this.handleChange}
+                                    className={classes.group}
+                                >
+                                    <FormControlLabel value="teacher" control={<Radio/>} label="Teacher"/>
+                                    <FormControlLabel value="student" control={<Radio/>} label="Student"/>
+                                </RadioGroup>
+                            </FormControl>
+                            <FormControl margin="normal" required fullWidth>
+                                <InputLabel htmlFor="email">Email</InputLabel>
+                                <Input value={this.state.email}
+                                       onChange={this.handleChange} id="email" name="email" autoFocus/>
+                            </FormControl>
+                            <FormControl margin="normal" required fullWidth>
+                                <InputLabel htmlFor="username">username</InputLabel>
+                                <Input value={this.state.username}
+                                       onChange={this.handleChange} id="username" name="username" autoFocus/>
+                            </FormControl>
+                            <FormControl margin="normal" required fullWidth>
+                                <InputLabel htmlFor="password">Password</InputLabel>
+                                <Input value={this.state.password}
+                                       onChange={this.handleChange} name="password" type="password" id="password"
+                                       autoComplete="current-password"/>
+                            </FormControl>
+                            <FormControl margin="normal" required fullWidth>
+                                <InputLabel htmlFor="password">Confirm password</InputLabel>
+                                <Input name="confirmPassword" type="password" id="confirmPassword"
+                                       autoComplete="current-password"/>
+                            </FormControl>
+                            <FormControl margin="normal" required fullWidth>
+                                <InputLabel>Your name</InputLabel>
+                                <Input value={this.state.name}
+                                       onChange={this.handleChange} id="name" name="name"/>
+                            </FormControl>
+                            <FormControl margin="normal" fullWidth>
+                                <InputLabel>Your mobile phone</InputLabel>
+                                <Input value={this.state.phone}
+                                       onChange={this.handleChange} id="phone" name="phone"/>
+                            </FormControl>
+                            <Button
+                                type="submit"
+                                fullWidth
+                                variant="contained"
+                                color="primary"
+                                className={classes.submit}
+                                onClick={this.handleSubmit}
+                            >
+                                Sign up
+                            </Button>
+                        </form>
+                    </Paper>
+                </main>
+            );
+        }
     }
 }
 
-SignIn.propTypes = {
+SignUp.propTypes = {
     classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(SignIn);
+export default withStyles(styles)(SignUp);

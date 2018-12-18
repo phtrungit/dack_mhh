@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import axios from 'axios'
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -12,7 +13,11 @@ import LockIcon from '@material-ui/icons/LockOutlined';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import withStyles from '@material-ui/core/styles/withStyles';
-
+import { Redirect} from 'react-router-dom'
+import { connect } from 'react-redux'
+import {logIn} from '../actions'
+import { compose } from 'redux'
+import SnackBar from './SnackBar'
 const styles = theme => ({
     main: {
         width: 'auto',
@@ -45,49 +50,122 @@ const styles = theme => ({
     },
 });
 
-function SignIn(props) {
-    const { classes } = props;
+class SignIn extends React.Component{
+    constructor() {
+        super()
+        this.state = {
+            username: '',
+            password: '',
+            redirectTo: null,
+            error:null,
+        }
+        // this.googleSignin = this.googleSignin.bind(this)
+        this.handleSubmit = this.handleSubmit.bind(this)
+        this.handleChange = this.handleChange.bind(this)
+    }
 
-    return (
-        <main className={classes.main}>
-            <CssBaseline />
-            <Paper className={classes.paper}>
-                <Avatar className={classes.avatar}>
-                    <LockIcon />
-                </Avatar>
-                <Typography component="h1" variant="h5">
-                    Sign in
-                </Typography>
-                <form className={classes.form}>
-                    <FormControl margin="normal" required fullWidth>
-                        <InputLabel htmlFor="email">Email Address</InputLabel>
-                        <Input id="email" name="email" autoComplete="email" autoFocus />
-                    </FormControl>
-                    <FormControl margin="normal" required fullWidth>
-                        <InputLabel htmlFor="password">Password</InputLabel>
-                        <Input name="password" type="password" id="password" autoComplete="current-password" />
-                    </FormControl>
-                    <FormControlLabel
-                        control={<Checkbox value="remember" color="primary" />}
-                        label="Remember me"
-                    />
-                    <Button
-                        type="submit"
-                        fullWidth
-                        variant="contained"
-                        color="primary"
-                        className={classes.submit}
-                    >
-                        Sign in
-                    </Button>
-                </form>
-            </Paper>
-        </main>
-    );
+    handleChange(event) {
+        this.setState({
+            [event.target.name]: event.target.value
+        })
+    }
+
+    handleSubmit(event) {
+        event.preventDefault()
+        console.log('handleSubmit')
+        axios
+            .post('http://localhost:4200/login', {
+                username:this.state.username,
+                password:this.state.password
+            })
+            .then(response => {
+                console.log('response',response)
+                if (response.data.user) {
+                    this.props.login(response.data.user)
+                    if(response.data.user.id.substr(0,2)==='ST')
+                    {
+                        this.setState({
+                            redirectTo: '/'
+                        })
+                    }else
+                    {
+                        this.setState({
+                            redirectTo: '/t'
+                        })
+                    }
+
+                }else {
+                    console.log("errorSignIn")
+                    alert( 'Vui lòng nhập lại username hoặc mật khẩu!')
+                }
+            })
+
+    }
+    render()
+    {
+
+        const { classes } = this.props;
+
+        if (this.state.redirectTo) {
+            return <Redirect to={{ pathname: this.state.redirectTo }} />
+        } else {
+            return (
+                <main className={classes.main}>
+                    <CssBaseline />
+                    <Paper className={classes.paper}>
+                        <Avatar className={classes.avatar}>
+                            <LockIcon />
+                        </Avatar>
+                        <Typography component="h1" variant="h5">
+                            Sign in
+                        </Typography>
+
+                        <form className={classes.form}>
+                            <FormControl margin="normal" required fullWidth>
+                                <InputLabel htmlFor="email">Username</InputLabel>
+                                <Input value={this.state.username}
+                                       onChange={this.handleChange} id="username" name="username"  autoFocus />
+                            </FormControl>
+                            <FormControl margin="normal" required fullWidth>
+                                <InputLabel htmlFor="password">Password</InputLabel>
+                                <Input value={this.state.password}
+                                       onChange={this.handleChange} name="password" type="password" id="password" autoComplete="current-password" />
+                            </FormControl>
+                            <FormControlLabel
+                                control={<Checkbox value="remember" color="primary" />}
+                                label="Remember me"
+                            />
+                            <Button
+                                type="submit"
+                                fullWidth
+                                variant="contained"
+                                color="primary"
+                                className={classes.submit}
+                                onClick={this.handleSubmit}
+                            >
+                                Sign in
+                            </Button>
+                        </form>
+                    </Paper>
+                </main>
+            );
+        }
+
+    }
+
 }
 
 SignIn.propTypes = {
     classes: PropTypes.object.isRequired,
 };
-
-export default withStyles(styles)(SignIn);
+const mapDispatchToProps = dispatch => {
+    return {
+        login: user => {
+            dispatch(logIn(user))
+        }
+    }
+}
+export default compose(
+    connect(null,mapDispatchToProps),
+    withStyles(styles)
+)(SignIn)

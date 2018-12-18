@@ -7,14 +7,14 @@ import ServiceComponent from './ServiceComponent'
 import EventsComponent from './EventsComponent'
 import FoooterComponent from'./FoooterComponent'
 import SearchComponent from './SearchComponent'
-class HomePageComponent extends Component {
+import {connect} from "react-redux";
+class HomePageStudent extends Component {
+
     render() {
         return (
             <div className="App">
                 <HeaderComponent></HeaderComponent>
                 <HomeComponent></HomeComponent>
-
-
                <div class="row">
                                 <div class="col-sm-2">
                                 </div>
@@ -44,4 +44,4 @@ class HomePageComponent extends Component {
         );
     }
 }
-export default HomePageComponent;
+export default (HomePageStudent);
