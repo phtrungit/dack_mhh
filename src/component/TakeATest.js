@@ -65,6 +65,7 @@ class TestComponent extends Component {
                 'Content-Type': 'application/json'
             },
         })
+        window.alert('Bạn đã hoàn thành bài test');
     }
 
     render() {
