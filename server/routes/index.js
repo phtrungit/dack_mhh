@@ -43,6 +43,18 @@ indexRouter.route('/product').get(function (req, res) {
     });
 });*/
 
+// -------------------- Lấy nội dung bài test bằng id của giáo viên ----------------
+indexRouter.route('/selectExam').get((req, res) => {
+    var id = req.query.id;
+    Exams.find({creator: id} ,(err, serverports) => {
+        if (err) {
+            console.log(err);
+        }
+        else {
+            res.json(serverports);
+        }
+    })
+})
 
 // -------------------- Lấy nội dung bài test bằng id ----------------
 indexRouter.route('/getTestExam').get(function (req, res) {
