@@ -35,22 +35,38 @@ const rows = [
 
 class SimpleTable extends React.Component{
     constructor(props){
-        super(props);
+        super(props)
+        this.BeginTest = this.BeginTest.bind(this);
+        this.showTeacher = this.showTeacher.bind(this);
         this.state = {
-            exam: rows,
-            titleExam: 'null'
+            exam: { 
+                data: rows,
+                teacher: 'null'
+            }
         }
     }
+
+    showTeacher(){
+        return 'AAAA';
+    }
+
+    BeginTest(e,row){
+        console.log(row);
+        var  path = `test`;
+        this.props.history.push(path,{idExam: row.id });
+    }
+
 
     componentDidMount() {
         axios.get('http://localhost:4200/selectAllExam')
         .then(res => {
             var data = res.data;
+            console.log(data);
             this.setState({
-                exam: data.data,
-                titleExam: res.data.teacher
+                exam: {
+                    data: data,
+                }
             })
-            console.log(this.state.titleExam[0].displayName);
         });
 
       
@@ -70,23 +86,23 @@ class SimpleTable extends React.Component{
                         <TableRow>
                             <TableCell>Mã đề thi</TableCell>
                             <TableCell >Tên đề thi</TableCell>
-            
-                            <TableCell >Người tạo</TableCell>
+                            <TableCell >Môn học</TableCell>
+                            <TableCell >Thời gian</TableCell>
                             <TableCell >Action</TableCell>
                         </TableRow>
                     </TableHead>
                     <TableBody>
-                        {rows.map(row => {
+                        {this.state.exam.data.map(row => {
                             return (
                                 <TableRow key={row.id}>
                                     <TableCell component="th" scope="row">
-                                        {this.state.exam[0].id}
+                                        {row.id}
                                     </TableCell>
-                                    <TableCell> {this.state.exam[0].title}</TableCell>
-                                   
-                                    <TableCell >{this.state.titleExam[0].displayName}</TableCell>
+                                    <TableCell> {row.title}</TableCell>
+                                    <TableCell> {row.subject}</TableCell>
+                                    <TableCell >{row.time}</TableCell>
                                     <TableCell>
-                                        <Button color="primary">
+                                        <Button color="primary" onClick = {e => this.BeginTest(e, row)}>
                                             Làm bài
                                         </Button>
                                     </TableCell>

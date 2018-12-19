@@ -47,6 +47,7 @@ indexRouter.route('/product').get(function (req, res) {
 // -------------------- Lấy nội dung bài test bằng id ----------------
 indexRouter.route('/getTestExam').get(function (req, res) {
     var id = req.query.id;
+    console.log(id);
     Questions.find({ examId: id }, function (err, serverports) {
         if (err) {
             console.log(err);
@@ -81,20 +82,7 @@ indexRouter.route('/selectAllExam').get((req, res) => {
             console.log(err);
         }
         else {
-            var idTeacher = serverports[0].creator;
-            Teacher.find({ id: idTeacher }, (err, data) => {
-                if (err) {
-                    console.log(err);
-                }
-                else {
-                    var result = {
-                        data: serverports,
-                        teacher: data
-                    }
-                    res.json(result);
-                }
-            })
-                ;
+            res.json(serverports);
         }
     })
 })

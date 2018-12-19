@@ -21,7 +21,11 @@ class TestComponent extends Component {
     }
 
     componentDidMount() {
-        axios.get('http://localhost:4200/getTestExam?id=EX0001')
+        console.log(this.props.location.state);
+        var idExam = this.props.location.state.idExam;
+        var req = 'http://localhost:4200/getTestExam?id=' + idExam;
+        console.log(req);
+        axios.get(req)
         .then(res => {
             var data = res.data;
           
@@ -83,6 +87,7 @@ class TestComponent extends Component {
                             <ul>
                                 <li>Thời gian: {this.state.titleExam[0].time}</li>
                                 <li>Số lượng: {this.state.exam.length} câu</li>
+                                 <li>Môn học: {this.state.titleExam[0].subject}</li>
                                 <li>Đối tượng: {this.state.titleExam[0].object}</li>
                             </ul>
                         </div>
