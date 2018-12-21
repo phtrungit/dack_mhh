@@ -109,6 +109,7 @@ class EditTestComponent extends Component {
                                             <TableCell >Thời gian</TableCell>
                                             <TableCell >Số lượng</TableCell>
                                             <TableCell >Chỉnh sửa</TableCell>
+                                            <TableCell >Thống kê</TableCell>
                                         </TableRow>
                                     </TableHead>
                                     <TableBody>
@@ -125,7 +126,12 @@ class EditTestComponent extends Component {
                                                     <TableCell>
                                                         <Button color="primary">
                                                             Chỉnh sửa
-                                        </Button>
+                                                        </Button>
+                                                    </TableCell>
+                                                    <TableCell>
+                                                    <Button color="primary">
+                                                            Thông tin
+                                                        </Button>
                                                     </TableCell>
                                                 </TableRow>
                                             );
