@@ -13,7 +13,7 @@ import EditTestComponent from '../component/teacherComponent/EditTest'
 import StudentCharts from '../component/StudentCharts'
 import TeacherCharts from '../component/TeacherCharts'
 import TeacherTestList from '../component/teacherComponent/TeacherTestList'
-
+import StudentHistoryExam from '../component/studentComponent/StudentHistoryExam'
 const routes = (
     <div>
         <Switch>
@@ -30,6 +30,7 @@ const routes = (
             <Route path="/studentscharts" component={StudentCharts} />
             <Route path="/teacherscharts" component={TeacherCharts} />
             <Route path="/teachertestlist" component={TeacherTestList} />
+            <Route path="/studenthistoryexam" component={StudentHistoryExam} />
         </Switch>
     </div>
 )

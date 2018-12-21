@@ -153,6 +153,37 @@ indexRouter.route('/selectTeacherTestList').get((req, res) => {
         }
     });
 })
+indexRouter.route('/selectstudenthistoryexam').get((req, res) => {
+    console.log(req.query.id);
+    StudentExams.find({ studentId: req.query.id }, function (err, list) {
+        if (err) {
+            console.log(err);
+        }
+        else {
+            Exams.find(function(err, chart){
+                if (err) {
+                    console.log(err);
+                }
+                else {
+                    var array = [];
+                    for (listItem in list){
+                        for( chartItem in chart){
+                            if(list[listItem].examId === chart[chartItem].id){
+                                list[listItem] = {
+                                    examId: list[listItem].examId,
+                                    score: list[listItem].score,
+                                    title: chart[chartItem].title,
+                                }
+                                break;
+                            }
+                        }
+                    }
+                    res.json(list);
+                }
+            });
+        }
+    });
+})
 indexRouter.route('/login').post(function (req, res,next) {
     console.log(req.body);
     let user=null;
