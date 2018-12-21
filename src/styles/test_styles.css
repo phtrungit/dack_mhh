@@ -1,3 +1,26 @@
+.container
+{
+	width: 1000px;
+	height: 1000px;
+
+}
+ul
+{
+	list-style: none;
+	margin-bottom: 0px;
+}
+.data1
+{
+
+}
+h1
+{
+	font-size: 30px;
+	font-weight: bold;
+	color: black;
+}
+
+
 .mt-30{
 	margin-top: 30px;
 }
@@ -43,12 +66,7 @@
 
 }
 
-h1
-{
-	font-size: 30px;
-	font-weight: bold;
-	color: black;
-}
+
 li
 {
 	font-size: 16px;
@@ -72,7 +90,7 @@ li
 }
 
 .khung4{
-	border: 2px solid gray;
+
 }
 .button{
 	background-color: #4CAF50;
@@ -88,8 +106,9 @@ li
 }
 
 .images_gioithieu{
-	width: 230px;
-
+	margin-top: 15px;
+	width: 400px;
+	height: 300px;
 }
 
 .mr-3{
@@ -117,8 +136,13 @@ li
 
 	margin-right: 30px;
 }
-
+li{
+	margin-left: -15px;
+}
 .answers{
 	background-color: red;
 	margin-right: 60px;
+}
+.background{
+	background-color:DodgerBlue;
 }
