@@ -1,18 +1,46 @@
 import React, { Component } from 'react';
-import '../App.css';
-import HeaderComponent from './HeaderComponent.js'
-import FoooterComponent from './FoooterComponent.js'
-import '../styles/test_styles.css'
+import '../../App.css';
+
+import '../../styles/test_styles.css'
 
 class CreateTestComponent extends Component {
   render() {
     return (
-         
-            <div className="container mt-30 color_black ">
+        <div>
+            <nav className="navbar navbar-expand-sm bg-dark justify-content-left">
+                <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+                    <a class="navbar-brand" href="#">Trang chủ</a>
+                </nav>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Tạo đề thi</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Tạo câu hỏi đề thi</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Bảng xếp hạng giáo viên</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Bảng  xếp hạng học sinh</a>
+                    </li>
+                    
+                </ul>
+                <div className="navbarMenu" >
+                    <form className="form-inline" action="/action_page.php">
+                        <input class="form-control mr-sm-2" type="text" placeholder="Search"></input>
+                        <button class="btn btn-success" type="submit">Search</button>
+
+                    </form>
+                </div>
+            </nav>
+            
+            <div className="container mt-30 color_black mb-20 ">
+                
                 <div className="row ">
                     <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                         <div className="test_center">
-                            <h2>Tạo đề thi chắc nghiệm</h2>
+                            <h2>Tạo câu hỏi đề thi trắc nghiệm</h2>
                         </div>
                     </div>
 
@@ -88,7 +116,7 @@ class CreateTestComponent extends Component {
                             <br></br>
                             <br></br>
                             <br></br>
-                            <br></br>
+                           
                         </form>
 
                         
@@ -100,7 +128,7 @@ class CreateTestComponent extends Component {
 
                  </div>
             </div>      
-
+</div>
 
 
   

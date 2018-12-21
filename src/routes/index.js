@@ -8,7 +8,8 @@ import Singup from '../component/SignUpComponent'
 import ListExam from '../component/ListExamComponent'
 import MyTest from '../component/studentComponent/MyTestComponent'
 import TestComponent from '../component/TakeATest'
-import CreateTestComponent from '../component/CreateTest'
+import CreateTestComponent from '../component/teacherComponent/CreateTest'
+import EditTestComponent from '../component/teacherComponent/EditTest'
 const routes = (
     <div>
         <Switch>
@@ -20,7 +21,8 @@ const routes = (
             <Route path="/list-exam" component={ListExam} />
             <Route path="/myex" component={MyTest} />
             <Route path="/test" component={TestComponent} />
-            <Route path="/createtest" component={CreateTestComponent} />
+             <Route path="/createtest" component={CreateTestComponent} />
+            <Route path="/edittest" component={EditTestComponent} />
         </Switch>
     </div>
 )
