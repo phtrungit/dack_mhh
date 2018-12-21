@@ -98,6 +98,28 @@ indexRouter.route('/selectAllExam').get((req, res) => {
         }
     })
 })
+indexRouter.route('/selectStudentCharts').get((req, res) => {
+    Student.find((err, chart) => {
+        if (err) {
+            console.log(err);
+        }
+        else {
+            console.log(chart);
+            res.json(chart);
+        }
+    }).sort( { point: -1 } );
+})
+indexRouter.route('/selectTeacherCharts').get((req, res) => {
+    Teacher.find((err, chart) => {
+        if (err) {
+            console.log(err);
+        }
+        else {
+            console.log(chart);
+            res.json(chart);
+        }
+    }).sort( { point: -1 } );
+})
 indexRouter.route('/login').post(function (req, res,next) {
     console.log(req.body);
     let user=null;
@@ -180,6 +202,5 @@ indexRouter.route('/signup').post(function (req,res,next) {
             }
         })
     }
-
 })
 module.exports = indexRouter;
