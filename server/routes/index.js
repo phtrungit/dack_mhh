@@ -4,7 +4,7 @@ const indexRouter = express.Router();
 const Questions = require('../models/questions');
 const Exams = require('../models/exams');
 const Student = require('../models/students');
-
+const StudentExams = require('../models/studentExams');
 const Teacher = require('../models/teachers');
 const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({
@@ -97,6 +97,92 @@ indexRouter.route('/selectAllExam').get((req, res) => {
         }
     })
 })
+indexRouter.route('/selectStudentCharts').get((req, res) => {
+    Student.find((err, chart) => {
+        if (err) {
+            console.log(err);
+        }
+        else {
+            console.log(chart);
+            res.json(chart);
+        }
+    }).sort( { point: -1 } );
+})
+indexRouter.route('/selectTeacherCharts').get((req, res) => {
+    Teacher.find((err, chart) => {
+        if (err) {
+            console.log(err);
+        }
+        else {
+            console.log(chart);
+            res.json(chart);
+        }
+    }).sort( { point: -1 } );
+})
+indexRouter.route('/selectTeacherTestList').get((req, res) => {
+    console.log(req.query.id);
+    StudentExams.find({ examId: req.query.id }, function (err, list) {
+        if (err) {
+            console.log(err);
+        }
+        else {
+            Student.find(function(err, chart){
+                if (err) {
+                    console.log(err);
+                }
+                else {
+                    var array = [];
+                    for (listItem in list){
+                        for( chartItem in chart){
+                            if(list[listItem].studentId === chart[chartItem].id){
+                                list[listItem] = {
+                                    examId: list[listItem].examId,
+                                    score: list[listItem].score,
+                                    id: chart[chartItem].id,
+                                    username: chart[chartItem].username,
+                                    displayName: chart[chartItem].displayName
+                                }
+                                break;
+                            }
+                        }
+                    }
+                    res.json(list);
+                }
+            });
+        }
+    });
+})
+indexRouter.route('/selectstudenthistoryexam').get((req, res) => {
+    console.log(req.query.id);
+    StudentExams.find({ studentId: req.query.id }, function (err, list) {
+        if (err) {
+            console.log(err);
+        }
+        else {
+            Exams.find(function(err, chart){
+                if (err) {
+                    console.log(err);
+                }
+                else {
+                    var array = [];
+                    for (listItem in list){
+                        for( chartItem in chart){
+                            if(list[listItem].examId === chart[chartItem].id){
+                                list[listItem] = {
+                                    examId: list[listItem].examId,
+                                    score: list[listItem].score,
+                                    title: chart[chartItem].title,
+                                }
+                                break;
+                            }
+                        }
+                    }
+                    res.json(list);
+                }
+            });
+        }
+    });
+})
 indexRouter.route('/login').post(function (req, res,next) {
     console.log(req.body);
     let user=null;
@@ -179,6 +265,5 @@ indexRouter.route('/signup').post(function (req,res,next) {
             }
         })
     }
-
 })
 module.exports = indexRouter;

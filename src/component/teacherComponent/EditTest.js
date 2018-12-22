@@ -91,9 +91,8 @@ class EditTestComponent extends Component {
                             </form>
                         </div>
                     </nav>
-
+                    
                     <div className="container mt-30 color_black mb-20 ">
-
                         <div className="row ">
                             <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                                 <div className="test_center">

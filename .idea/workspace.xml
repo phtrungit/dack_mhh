@@ -2,15 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ed15effd-c497-4fd2-a157-b44227468885" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/src/component/StudentCharts.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/component/TeacherCharts.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/component/studentComponent/StudentHistoryExam.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/component/teacherComponent/TeacherTestList.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/passport/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/passport/localStrategy.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/server/routes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/server.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/component/HeaderTeacher.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/HeaderTeacher.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/component/HomePageStudent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/HomePageStudent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/HomePageTeacher.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/HomePageTeacher.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/component/teacherComponent/EditTest.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/teacherComponent/EditTest.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reducers/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/auth.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/index.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -51,8 +51,11 @@
       <file leaf-file-name="EditTest.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/component/teacherComponent/EditTest.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+            <state relative-caret-position="-954">
+              <caret line="93" column="20" selection-start-line="93" selection-start-column="20" selection-end-line="93" selection-end-column="20" />
+              <folding>
+                <element signature="e#0#41#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -325,12 +328,12 @@
       <workItem from="1545065846899" duration="28369000" />
       <workItem from="1545144792637" duration="6332000" />
       <workItem from="1545360958096" duration="841000" />
-      <workItem from="1545375340508" duration="18952000" />
+      <workItem from="1545375340508" duration="19876000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="100529000" />
+    <option name="totallyTimeSpent" value="101453000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
@@ -345,7 +348,7 @@
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.32954547" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32954547" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -727,8 +730,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/component/teacherComponent/EditTest.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+        <state relative-caret-position="-954">
+          <caret line="93" column="20" selection-start-line="93" selection-start-column="20" selection-end-line="93" selection-end-column="20" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

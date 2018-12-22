@@ -12,7 +12,7 @@ class HomePageTeacher extends Component {
     return (
       <div className="App">
         <HeaderTeacher></HeaderTeacher>
-        /*<listExamTeacher></listExamTeacher>*/
+        <listExamTeacher></listExamTeacher>
 
         <SearchComponent></SearchComponent>
         <PopularComponent></PopularComponent>
