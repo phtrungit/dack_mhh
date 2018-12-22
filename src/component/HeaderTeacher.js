@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {connect} from "react-redux";
+import { Link} from 'react-router-dom'
 
 class HeaderTeacher extends Component {
     render() {
@@ -15,8 +16,8 @@ class HeaderTeacher extends Component {
                     <nav className="main_nav_container">
                         <div className="main_nav">
                             <ul className="main_nav_list">
-                                <li className="main_nav_item"><a href="#">Trang chủ</a></li>
-                                <li className="main_nav_item"><a href="#">Tạo bài thi mới</a></li>
+                                <li className="main_nav_item"><Link to ='/'>Trang chủ</Link></li>
+                                <li className="main_nav_item"><Link to ='/edittest'>Tạo bài thi mới</Link></li>
                                 <li className="main_nav_item"><a href="#">Danh sách bài thi đã tạo</a></li>
                                 <li className="main_nav_item"><a href="#">Bảng xếp hạng</a></li>
                                 <li className="main_nav_item"><a href="#">Tin tức</a></li>

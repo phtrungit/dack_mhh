@@ -8,7 +8,6 @@ const MongoStore = require('connect-mongo')(session)
 const PORT = 4200;
 const cors = require('cors');
 const config = require('../config/config');
-const passport = require('./passport')
 var indexRouter = require('./routes/index');
 var flash=require('connect-flash');
 app.use(cors());
@@ -36,12 +35,7 @@ app.use(
 app.use(flash());
 
 // ===== Passport ====
-app.use(passport.initialize())
-app.use(passport.session()) // will call the deserializeUser
-app.use(function(req, res, next) {
-    res.locals.session=req.session;
-    next();
-});
+
 app.use('/', indexRouter);
 app.listen(PORT, function(){
     console.log('Server is running on Port: ',PORT);

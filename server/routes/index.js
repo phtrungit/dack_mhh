@@ -7,7 +7,6 @@ const Student = require('../models/students');
 
 const Teacher = require('../models/teachers');
 const bodyParser = require('body-parser');
-const passport = require('../passport')
 app.use(bodyParser.urlencoded({
     extended: true,
     limit: '50mb',

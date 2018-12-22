@@ -5,12 +5,11 @@ const initState ={
 const auth = (state =initState, action) => {
     switch (action.type) {
         case 'LOG_IN':
-            let newstate={
+            return {
+                ...state,
                 currentUser:action.user,
                 isLogin:true
-            }
-            return newstate
-
+            };
         case 'LOG_OUT':
             return initState
         default:
