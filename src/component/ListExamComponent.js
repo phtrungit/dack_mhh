@@ -30,7 +30,7 @@ const styles = theme => ({
 });
 
 const rows = [
-    {id: 'D001', title: 'Trắc nghiệm toán nâng cao', creator:'Trung Phạm'}
+    {id: 'null', title: 'Empty', creator:'Trung Phạm'}
 ];
 
 class SimpleTable extends React.Component{

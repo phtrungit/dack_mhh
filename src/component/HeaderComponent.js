@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-
+import {connect} from "react-redux";
+import { Link} from 'react-router-dom'
+import accountIcon from '@material-ui/icons/AccountCircle'
 class HeaderComponent extends Component {
   render() {
     return (
@@ -8,25 +10,26 @@ class HeaderComponent extends Component {
 			<div className="logo_container">
 				<div class="logo">
                 <img src={require('../images/logo.png')}/>
-					<span>course</span>
+					<span>Ex-Ol</span>
                 </div>
 			</div>
             <nav className="main_nav_container">
 				<div className="main_nav">
 					<ul className="main_nav_list">
-						<li className="main_nav_item"><a href="#">home</a></li>
-						<li className="main_nav_item"><a href="#">about us</a></li>
-						<li className="main_nav_item"><a href="courses.html">courses</a></li>
-						<li className="main_nav_item"><a href="elements.html">elements</a></li>
-						<li className="main_nav_item"><a href="news.html">news</a></li>
-						<li className="main_nav_item"><a href="contact.html">contact</a></li>
+						<li className="main_nav_item"><Link to ='/'>Trang chủ</Link></li>
+						<li className="main_nav_item"><Link to ='/list-exam'>Danh sách bài thi</Link></li>
+						<li className="main_nav_item"><Link to ='/studenthistoryexam'>Lịch sử làm bài</Link></li>
+						<li className="main_nav_item"><Link to ='/studentscharts'>Bảng xếp hạng học sinh</Link></li>
+						<li className="main_nav_item"><Link to ='/teacherscharts'>Bảng xếp hạng giáo viên</Link></li>
+
 					</ul>
 				</div>
 			</nav>
 		</div>
         <div class="header_side d-flex flex-row justify-content-center align-items-center">
-			<img src= {require('../images/phone-call.svg')} alt=""></img>
-			<span>+43 4566 7788 2457</span>
+			<img src= {require('../images/accountIcon.png')} alt=""></img>
+			<span>{this.props.users.displayName}</span>
+            <span><Link to ='/logout'>Đăng xuất</Link></span>
 		</div>
 
 		<div className="hamburger_container">
@@ -37,5 +40,12 @@ class HeaderComponent extends Component {
     );
   }
 }
+const mapStateToProps =(state) =>{
 
-export default HeaderComponent;
+
+    return{
+        users: state.auth.currentUser
+    };
+
+}
+export default connect(mapStateToProps) (HeaderComponent);

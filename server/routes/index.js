@@ -93,6 +93,7 @@ indexRouter.route('/selectAllExam').get((req, res) => {
             console.log(err);
         }
         else {
+            //console.log(serverports)
             res.json(serverports);
         }
     })

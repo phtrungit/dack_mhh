@@ -14,6 +14,7 @@ import StudentCharts from '../component/StudentCharts'
 import TeacherCharts from '../component/TeacherCharts'
 import TeacherTestList from '../component/teacherComponent/TeacherTestList'
 import StudentHistoryExam from '../component/studentComponent/StudentHistoryExam'
+import DetailExam from '../component/DetailedExamQuestions'
 const routes = (
     <div>
         <Switch>
@@ -31,6 +32,7 @@ const routes = (
             <Route path="/teacherscharts" component={TeacherCharts} />
             <Route path="/teachertestlist" component={TeacherTestList} />
             <Route path="/studenthistoryexam" component={StudentHistoryExam} />
+            <Route path="/detail-ex" component={DetailExam} />
         </Switch>
     </div>
 )
