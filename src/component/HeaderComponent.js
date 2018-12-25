@@ -21,7 +21,6 @@ class HeaderComponent extends Component {
 						<li className="main_nav_item"><Link to ='/studenthistoryexam'>Lịch sử làm bài</Link></li>
 						<li className="main_nav_item"><Link to ='/studentscharts'>Bảng xếp hạng học sinh</Link></li>
 						<li className="main_nav_item"><Link to ='/teacherscharts'>Bảng xếp hạng giáo viên</Link></li>
-
 					</ul>
 				</div>
 			</nav>

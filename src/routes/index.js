@@ -25,7 +25,7 @@ const routes = (
             <Route path="/signup" component={Singup} />
             <Route path="/list-exam" component={ListExam} />
             <Route path="/myex" component={MyTest} />
-            <Route path="/test" component={TestComponent} />
+            <Route path="/test/:idExam" component={TestComponent} />
             <Route path="/createtest" component={CreateTestComponent} />
             <Route path="/edittest" component={EditTestComponent} />
             <Route path="/studentscharts" component={StudentCharts} />

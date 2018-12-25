@@ -21,8 +21,8 @@ class TestComponent extends Component {
     }
 
     componentDidMount() {
-        console.log(this.props.location.state);
-        var idExam = this.props.location.state.idExam;
+        console.log('STATE',this.props.match.params.idExam);
+        var idExam = this.props.match.params.idExam;
         var req = 'http://localhost:4200/getTestExam?id=' + idExam;
         console.log(req);
         axios.get(req)
@@ -73,6 +73,7 @@ class TestComponent extends Component {
         return (
 
             <div className="container mt-30 color_black ">
+                <HeaderComponent/>
                 <div className="row ">
                     <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                         <div className="test_center">
