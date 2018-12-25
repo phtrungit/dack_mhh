@@ -52,7 +52,7 @@ class SimpleTable extends React.Component{
 
     BeginTest(e,row){
         console.log(row);
-        var  path = `test`;
+        var  path = `test/${row.id}`;
         this.props.history.push(path,{idExam: row.id });
     }
 

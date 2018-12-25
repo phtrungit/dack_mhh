@@ -3,6 +3,8 @@ import '../App.css';
 import HeaderComponent from './HeaderComponent.js'
 import FoooterComponent from './FoooterComponent.js'
 import '../styles/test_styles.css'
+import {connect} from "react-redux";
+import { Link} from 'react-router-dom'
 import axios from 'axios';
 
 var listExam = [{ "_id": "5c16635508943720ec5056fb", "id": "QT0001", "examId": "EX0001", "text": "Gía trị của biểu thức x=...+y/abs(z)", "optionA": "Câu A", "optionB": "Câu B", "optionC": "Câu C", "optionD": "Câu D", "correctOption": "A", "point": "0.5", "__v": 0 }];
@@ -42,8 +44,8 @@ class TestComponent extends Component {
     handleOptionChange(changeEvent){
         console.log(listAnswer);
         for(var i = 0;i< listAnswer.length;i++){
-            if( changeEvent.target.name === listAnswer[i].id){
-                listAnswer[i].value = changeEvent.target.value; 
+            if( changeEvent.target.name === i){
+                listAnswer[i] = changeEvent.target.value;
                 return;
             }
         };
@@ -58,13 +60,13 @@ class TestComponent extends Component {
     }
 
     SubmitTest = () => {
-        fetch('http://localhost:4200/updateResultTest',{
-            method: 'POST',
-            body: JSON.stringify(listAnswer),
-            headers: {
-                'Content-Type': 'application/json'
-            },
-        })
+        const payload = {
+            listAnswer:listAnswer,
+            idExam:this.state.titleExam[0].id,
+            studentId:this.props.users.id
+        };
+        axios.post('http://localhost:4200/updateResultTest', payload);
+
         window.alert('Bạn đã hoàn thành bài test');
     }
 
@@ -99,20 +101,20 @@ class TestComponent extends Component {
                         <br></br>
                         {/* Danh sach cau hoi */}
                         <p className="cau_hoi2">Tìm đáp án đúng của câu hỏi sau</p>
-                        <div>{this.state.exam.map((exam) => {
+                        <div>{this.state.exam.map((exam,index) => {
                             return <div className="cau_hoi ml-5">
                                 <pre>
                                     {exam.id}: {exam.text}
                                 </pre>
                                 <br></br>
                                 <div className="ml-5 dap-an">
-                                    <input type="radio" id="Fastlearning" name = {exam.id} value='A' onChange={this.handleOptionChange}></input>
+                                    <input type="radio" id="Fastlearning" name = {index} value='A' onChange={this.handleOptionChange}></input>
                                     <label for="Fastlearning">&nbsp; &nbsp;{exam.optionA}</label><br />
-                                    <input type="radio" name = {exam.id} value = 'B' onChange={this.handleOptionChange}></input>
+                                    <input type="radio" name = {index} value = 'B' onChange={this.handleOptionChange}></input>
                                     <label>&nbsp; &nbsp;{exam.optionB}</label><br />
-                                    <input type="radio" name = {exam.id} value='C' onChange={this.handleOptionChange}></input>
+                                    <input type="radio" name = {index} value='C' onChange={this.handleOptionChange}></input>
                                     <label>&nbsp; &nbsp;{exam.optionC}</label> <br />
-                                    <input type="radio" name = {exam.id} value = 'D'  onChange={this.handleOptionChange}></input>
+                                    <input type="radio" name = {index} value = 'D'  onChange={this.handleOptionChange}></input>
                                     <label>&nbsp; &nbsp;{exam.optionD}</label>
                                 </div>
                             </div>
@@ -178,5 +180,12 @@ class TestComponent extends Component {
         );
     }
 }
+const mapStateToProps =(state) =>{
 
-export default TestComponent;
+
+    return{
+        users: state.auth.currentUser
+    };
+
+}
+export default connect(mapStateToProps)(TestComponent);

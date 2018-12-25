@@ -83,7 +83,27 @@ indexRouter.route('/getTestExam').get(function (req, res) {
 
 //---------------------Cập nhật đáp án bài thi-----------------
 indexRouter.route('/updateResultTest').post(function (req, res) {
-    console.log(req.body);
+    const listAnswer=req.body.listAnswer.sort(req.body.listAnswer.id).reverse();
+    const answerSheet=[];
+    for (let i=0;i<listAnswer.length;i++)
+    {
+        answerSheet[i]=listAnswer[i].value
+    }
+    const d =Date.now();
+    const studentExam = new StudentExams({
+        id: 'STE'+req.body.studentId+d,
+        examId: req.body.idExam,
+        studentId: req.body.studentId,
+        score: 10,
+        answerSheet: answerSheet,
+
+    })
+    studentExam.save((err, savedstudentExam) => {
+        if (err) return res.json(err)
+        console.log(savedstudentExam);
+        res.json({studentExam:savedstudentExam})
+    })
+
 })
 
 //-----------Lấy đề thi---------------
