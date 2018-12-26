@@ -32,7 +32,7 @@ const routes = (
             <Route path="/teacherscharts" component={TeacherCharts} />
             <Route path="/teachertestlist" component={TeacherTestList} />
             <Route path="/studenthistoryexam" component={StudentHistoryExam} />
-            <Route path="/detail-ex" component={DetailExam} />
+            <Route path="/detail-ex/:id" component={DetailExam} />
         </Switch>
     </div>
 )

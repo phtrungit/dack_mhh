@@ -110,6 +110,7 @@ indexRouter.route('/updateResultTest').post(async function (req, res) {
             }
         }
     });
+    console.log('answerSheet',answerSheet)
     console.log('finalScore',score)
     const d =Date.now();
     const studentExam = new StudentExams({
@@ -117,9 +118,12 @@ indexRouter.route('/updateResultTest').post(async function (req, res) {
         examId: req.body.idExam,
         studentId: req.body.studentId,
         score: score,
-        answerSheet: answerSheet,
 
     })
+    for (let i=0;i<answerSheet.length;i++)
+    {
+        studentExam.answerSheet[i]=answerSheet[i]
+    }
     studentExam.save((err, savedstudentExam) => {
         if (err) return res.json(err)
         console.log(savedstudentExam);
@@ -215,6 +219,7 @@ indexRouter.route('/selectstudenthistoryexam').get((req, res) => {
                                     examId: list[listItem].examId,
                                     score: list[listItem].score,
                                     title: chart[chartItem].title,
+                                    id:list[listItem].id
                                 }
                                 break;
                             }
@@ -226,6 +231,52 @@ indexRouter.route('/selectstudenthistoryexam').get((req, res) => {
         }
     });
 })
+// -------------------- Lấy nội dung bài thi cùa học sinh và đáp án bằng id ----------------
+indexRouter.route('/detail-ex').get(async function (req, res) {
+    var id = req.query.id;
+    let examId='';
+    let answer=[];
+    let score=0;
+    console.log('idStudentEx',id);
+
+    await StudentExams.findOne({ id: id }, function (err, studentExam) {
+        if (err) {
+            console.log(err);
+        }
+        else {
+            console.log('studentExam',studentExam);
+            examId=studentExam.examId
+            answer=studentExam.answerSheet
+            score=studentExam.score
+            console.log('answ',answer)
+            console.log('exID',studentExam.id);
+        }
+    });
+
+    console.log('exID',examId);
+    Questions.find({ examId: examId },async function (err, serverports) {
+        if (err) {
+            console.log(err);
+        }
+        else {
+            Exams.find({ id: examId }, function (err, data) {
+                if (err) {
+                    console.log(err);
+                }
+                else {
+
+                    var result = {
+                        data: serverports,
+                        title: data,
+                        answer:answer,
+                        score:score
+                    }
+                    res.json(result);
+                }
+            })
+        }
+    });
+});
 indexRouter.route('/login').post(function (req, res,next) {
     console.log(req.body);
     let user=null;

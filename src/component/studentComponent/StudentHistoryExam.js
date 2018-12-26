@@ -36,7 +36,7 @@ const rows = [
 class SimpleTable extends React.Component{
     constructor(props){
         super(props)
-        this.BeginTest = this.BeginTest.bind(this);
+        this.detailTest = this.detailTest.bind(this);
         this.showTeacher = this.showTeacher.bind(this);
         this.state = {
             exam: { 
@@ -50,10 +50,10 @@ class SimpleTable extends React.Component{
         return 'AAAA';
     }
 
-    BeginTest(e,row){
+    detailTest(e,row){
         console.log(row);
-        var  path = `test`;
-        this.props.history.push(path,{idExam: row.id });
+        var  path = `detail-ex/${row.id}`;
+        this.props.history.push(path);
     }
 
 
@@ -87,7 +87,7 @@ class SimpleTable extends React.Component{
                             <TableCell>Mã đề thi</TableCell>
                             <TableCell >Tên đề thi</TableCell>
                             <TableCell >Điểm</TableCell>
-                            <TableCell >Xem bài làm</TableCell>
+                            <TableCell >Xem bài làm và đáp án</TableCell>
                         </TableRow>
                     </TableHead>
                     <TableBody>
@@ -100,7 +100,7 @@ class SimpleTable extends React.Component{
                                     <TableCell> {row.title}</TableCell>
                                     <TableCell> {row.score}</TableCell>
                                     <TableCell>
-                                        <Button color="primary">
+                                        <Button color="primary" onClick = {e => this.detailTest(e, row)}>
                                             Xem
                                         </Button>
                                     </TableCell>

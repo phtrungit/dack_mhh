@@ -104,7 +104,7 @@ class TestComponent extends Component {
                         <div>{this.state.exam.map((exam,index) => {
                             return <div className="cau_hoi ml-5">
                                 <pre>
-                                    {exam.id}: {exam.text}
+                                    Câu {index+1}: {exam.text}
                                 </pre>
                                 <br></br>
                                 <div className="ml-5 dap-an">

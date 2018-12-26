@@ -117,11 +117,14 @@ li
 }
 
 .noi_dung{
-		font-size: 15px;
-
+	font-size: 15px;
 	color: black;
+	margin-bottom: 20px;
 }
-
+.score ul li{
+	color: red;
+	font-size: 35px;
+}
 .image-upload > input
 {
     display: none;
