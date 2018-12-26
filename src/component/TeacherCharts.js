@@ -11,6 +11,9 @@ import Paper from '@material-ui/core/Paper';
 import Header from './HeaderComponent';
 import Footer from './FoooterComponent';
 import axios from 'axios';
+import { compose } from 'redux'
+import {connect} from "react-redux";
+import { Redirect} from 'react-router-dom'
 const styles = theme => ({
     root: {
         width: '100%',
@@ -73,44 +76,59 @@ class SimpleTable extends React.Component{
     }
 
     render(){
-        const {classes}=this.props;
-        return (
-        <div>
-            <Header/>
-            <div className={classes.title}>
-                Bảng xếp hạng giáo viên
-            </div>
-            <Paper className={classes.root}>
-                <Table className={classes.table}>
-                    <TableHead>
-                        <TableRow>
-                            <TableCell>Mã giáo viên</TableCell>
-                            <TableCell >Tên giáo viên</TableCell>
-                            <TableCell >Tên tài khoảng</TableCell>
-                            <TableCell >Điểm</TableCell>
-                        </TableRow>
-                    </TableHead>
-                    <TableBody>
-                        {this.state.exam.data.map(row => {
-                            return (
-                                <TableRow key={row.id}>
-                                    <TableCell component="th" scope="row">
-                                        {row.id}
-                                    </TableCell>
-                                    <TableCell> {row.displayName}</TableCell>
-                                    <TableCell> {row.username}</TableCell>
-                                    <TableCell> {row.point}</TableCell>
+        if(this.props.isLogin===false)
+            return <Redirect to={'/login'}/>
+        else {
+            const {classes} = this.props;
+            return (
+                <div>
+                    <Header/>
+                    <div className={classes.title}>
+                        Bảng xếp hạng giáo viên
+                    </div>
+                    <Paper className={classes.root}>
+                        <Table className={classes.table}>
+                            <TableHead>
+                                <TableRow>
+                                    <TableCell>Mã giáo viên</TableCell>
+                                    <TableCell>Tên giáo viên</TableCell>
+                                    <TableCell>Tên tài khoảng</TableCell>
+                                    <TableCell>Điểm</TableCell>
                                 </TableRow>
-                            );
-                        })}
-                    </TableBody>
-                </Table>
-            </Paper>
-            <Footer/>
-        </div>
+                            </TableHead>
+                            <TableBody>
+                                {this.state.exam.data.map(row => {
+                                    return (
+                                        <TableRow key={row.id}>
+                                            <TableCell component="th" scope="row">
+                                                {row.id}
+                                            </TableCell>
+                                            <TableCell> {row.displayName}</TableCell>
+                                            <TableCell> {row.username}</TableCell>
+                                            <TableCell> {row.point}</TableCell>
+                                        </TableRow>
+                                    );
+                                })}
+                            </TableBody>
+                        </Table>
+                    </Paper>
+                    <Footer/>
+                </div>
 
-    );
+            );
+        }
 }
 }
+const mapStateToProps =(state) =>{
 
-export default withStyles(styles)(SimpleTable);
+
+    return{
+        users: state.auth.currentUser,
+        isLogin:state.auth.isLogin
+    };
+
+}
+export default compose(
+    connect(mapStateToProps),
+    withStyles(styles)
+)(SimpleTable);

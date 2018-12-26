@@ -10,6 +10,9 @@ import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import Header from '../HeaderComponent';
 import Footer from '../FoooterComponent';
+import { compose } from 'redux'
+import {connect} from "react-redux";
+import { Redirect} from 'react-router-dom'
 import axios from 'axios';
 const styles = theme => ({
     root: {
@@ -73,56 +76,63 @@ class SimpleTable extends React.Component{
     }
 
     render(){
-        const {classes}=this.props;
-        return (
-        <div>
-            <Header/>
-            <div className={classes.title}>
-                Lịch sử làm bài
-            </div>
-            <Paper className={classes.root}>
-                <Table className={classes.table}>
-                    <TableHead>
-                        <TableRow>
-                            <TableCell>Mã đề thi</TableCell>
-                            <TableCell >Tên đề thi</TableCell>
-                            <TableCell >Điểm</TableCell>
-                            <TableCell >Xem bài làm và đáp án</TableCell>
-                        </TableRow>
-                    </TableHead>
-                    <TableBody>
-                        {this.state.exam.data.map(row => {
-                            return (
-                                <TableRow key={row.examId}>
-                                    <TableCell component="th" scope="row">
-                                        {row.examId}
-                                    </TableCell>
-                                    <TableCell> {row.title}</TableCell>
-                                    <TableCell> {row.score}</TableCell>
-                                    <TableCell>
-                                        <Button color="primary" onClick = {e => this.detailTest(e, row)}>
-                                            Xem
-                                        </Button>
-                                    </TableCell>
+        if(this.props.isLogin===false)
+            return <Redirect to={'/login'}/>
+        else {
+            const {classes} = this.props;
+            return (
+                <div>
+                    <Header/>
+                    <div className={classes.title}>
+                        Lịch sử làm bài
+                    </div>
+                    <Paper className={classes.root}>
+                        <Table className={classes.table}>
+                            <TableHead>
+                                <TableRow>
+                                    <TableCell>Mã đề thi</TableCell>
+                                    <TableCell>Tên đề thi</TableCell>
+                                    <TableCell>Điểm</TableCell>
+                                    <TableCell>Xem bài làm và đáp án</TableCell>
                                 </TableRow>
-                            );
-                        })}
-                    </TableBody>
-                </Table>
-            </Paper>
-            <Footer/>
-        </div>
+                            </TableHead>
+                            <TableBody>
+                                {this.state.exam.data.map(row => {
+                                    return (
+                                        <TableRow key={row.examId}>
+                                            <TableCell component="th" scope="row">
+                                                {row.examId}
+                                            </TableCell>
+                                            <TableCell> {row.title}</TableCell>
+                                            <TableCell> {row.score}</TableCell>
+                                            <TableCell>
+                                                <Button color="primary" onClick={e => this.detailTest(e, row)}>
+                                                    Xem
+                                                </Button>
+                                            </TableCell>
+                                        </TableRow>
+                                    );
+                                })}
+                            </TableBody>
+                        </Table>
+                    </Paper>
+                    <Footer/>
+                </div>
 
-    );
+            );
+        }
 }
 }
 const mapStateToProps =(state) =>{
 
 
     return{
-        users: state.auth.currentUser
+        users: state.auth.currentUser,
+        isLogin:state.auth.isLogin
     };
 
 }
-
-export default withStyles(styles)(SimpleTable);
+export default compose(
+    connect(mapStateToProps),
+    withStyles(styles)
+)(SimpleTable);
