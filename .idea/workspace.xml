@@ -2,10 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ed15effd-c497-4fd2-a157-b44227468885" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/component/ListExamComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/ListExamComponent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/CoursePageComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/CoursePageComponent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/DetailedExamQuestions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/studentComponent/DetailedTestAndResult.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/HeaderComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/studentComponent/HeaderStudent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/HomePageStudent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/studentComponent/HomePageStudent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/ListExamComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/studentComponent/ListExam.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/ListExamTeacher.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/ListExamTeacher.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/SearchComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/SearchComponent.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/component/StudentCharts.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/StudentCharts.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/TakeATest.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/studentComponent/TakeATest.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/component/TeacherCharts.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/TeacherCharts.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/studentComponent/MyTestComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/studentComponent/MyTest.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/component/studentComponent/StudentHistoryExam.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/studentComponent/StudentHistoryExam.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/teacherComponent/TeacherTestList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/teacherComponent/TeacherTestList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/index.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -52,7 +63,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="StudentCharts.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="StudentCharts.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/component/StudentCharts.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="251">
@@ -60,6 +71,54 @@
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MyTest.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/component/studentComponent/MyTest.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-4227" />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CoursePageComponent.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/component/CoursePageComponent.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-145">
+              <folding>
+                <element signature="e#0#41#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DetailedTestAndResult.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/component/studentComponent/DetailedTestAndResult.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="144">
+              <caret line="8" column="26" lean-forward="true" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="26" />
+              <folding>
+                <element signature="e#0#41#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MyTestComponent.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/component/MyTestComponent.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="219">
+              <caret line="168" column="10" lean-forward="true" selection-start-line="168" selection-start-column="10" selection-end-line="168" selection-end-column="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TakeATest.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/component/studentComponent/TakeATest.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="108">
+              <caret line="6" column="38" lean-forward="true" selection-start-line="6" selection-start-column="38" selection-end-line="6" selection-end-column="38" />
             </state>
           </provider>
         </entry>
@@ -80,6 +139,10 @@
       <find>QT001</find>
       <find>ST0</find>
       <find>fixed</find>
+      <find>../images/author.jpg</find>
+      <find>../images</find>
+      <find>../styles</find>
+      <find>../</find>
     </findStrings>
     <replaceStrings>
       <replace>TC</replace>
@@ -95,8 +158,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/server/seed/exams.js" />
-        <option value="$PROJECT_DIR$/server/seed/choices.js" />
         <option value="$PROJECT_DIR$/server/models/choices.js" />
         <option value="$PROJECT_DIR$/server/passport/index.js" />
         <option value="$PROJECT_DIR$/server/passport/googleStrategy.js" />
@@ -140,12 +201,14 @@
         <option value="$PROJECT_DIR$/src/routes/index.js" />
         <option value="$PROJECT_DIR$/src/styles/detailed_exam_questions.css" />
         <option value="$PROJECT_DIR$/server/routes/index.js" />
-        <option value="$PROJECT_DIR$/src/component/DetailedExamQuestions.js" />
         <option value="$PROJECT_DIR$/src/styles/test_styles.css" />
         <option value="$PROJECT_DIR$/src/component/ListExamComponent.js" />
         <option value="$PROJECT_DIR$/src/component/studentComponent/StudentHistoryExam.js" />
         <option value="$PROJECT_DIR$/src/component/TeacherCharts.js" />
         <option value="$PROJECT_DIR$/src/component/StudentCharts.js" />
+        <option value="$PROJECT_DIR$/src/component/DetailedExamQuestions.js" />
+        <option value="$PROJECT_DIR$/src/component/studentComponent/TakeATest.js" />
+        <option value="$PROJECT_DIR$/src/component/studentComponent/DetailedExamQuestions.js" />
       </list>
     </option>
   </component>
@@ -227,18 +290,6 @@
               <item name="component" type="462c0819:PsiDirectoryNode" />
               <item name="studentComponent" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="dack_mhh" type="b2602c69:ProjectViewProjectNode" />
-              <item name="dack_mhh" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="routes" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="dack_mhh" type="b2602c69:ProjectViewProjectNode" />
-              <item name="dack_mhh" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="styles" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -261,6 +312,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\Study\Mhh\dack_mhh\src\component\studentComponent" />
       <recent name="E:\Study\CNMTPTPM\dack_mhh\src" />
     </key>
   </component>
@@ -296,12 +348,12 @@
       <workItem from="1545360958096" duration="841000" />
       <workItem from="1545375340508" duration="22297000" />
       <workItem from="1545555008722" duration="8487000" />
-      <workItem from="1545731042451" duration="21376000" />
+      <workItem from="1545731042451" duration="22258000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="133737000" />
+    <option name="totallyTimeSpent" value="134619000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
@@ -440,15 +492,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/component/CoursePageComponent.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-8">
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/styles/courses_responsive.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-8959" />
@@ -554,9 +597,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/component/studentComponent/MyTestComponent.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/seed/exams.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
@@ -575,18 +615,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
           <caret line="34" column="23" selection-start-line="34" selection-start-column="23" selection-end-line="34" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/component/DetailedExamQuestions.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="79" column="43" lean-forward="true" selection-start-line="79" selection-start-column="43" selection-end-line="79" selection-end-column="43" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-            <element signature="e#2#8#0" expanded="true" />
-            <element signature="e#9#15#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -613,13 +641,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/component/TakeATest.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3021">
-          <caret line="6" column="38" lean-forward="true" selection-start-line="6" selection-start-column="38" selection-end-line="6" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/component/HomeComponent.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1545">
@@ -639,7 +660,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/component/HeaderComponent.js">
+    <entry file="file://$PROJECT_DIR$/src/component/studentComponent/HeaderStudent.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="89">
           <caret line="37" column="8" lean-forward="true" selection-start-line="37" selection-start-column="8" selection-end-line="37" selection-end-column="8" />
@@ -649,11 +670,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/component/MyTestComponent.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2773" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/component/SignInComponent.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
@@ -661,7 +677,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/component/HomePageStudent.js">
+    <entry file="file://$PROJECT_DIR$/src/component/studentComponent/HomePageStudent.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="143">
           <caret line="18" column="9" lean-forward="true" selection-start-line="15" selection-start-column="7" selection-end-line="18" selection-end-column="9" />
@@ -688,7 +704,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/component/ListExamComponent.js">
+    <entry file="file://$PROJECT_DIR$/src/component/studentComponent/ListExam.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="89">
           <caret line="127" lean-forward="true" selection-start-line="127" selection-end-line="139" selection-end-column="1" />
@@ -714,6 +730,44 @@
           <caret line="129" column="1" lean-forward="true" selection-start-line="129" selection-start-column="1" selection-end-line="129" selection-end-column="1" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/component/studentComponent/MyTest.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4227" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/component/CoursePageComponent.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-145">
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/component/MyTestComponent.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="219">
+          <caret line="168" column="10" lean-forward="true" selection-start-line="168" selection-start-column="10" selection-end-line="168" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/component/studentComponent/TakeATest.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="6" column="38" lean-forward="true" selection-start-line="6" selection-start-column="38" selection-end-line="6" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/component/studentComponent/DetailedTestAndResult.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="8" column="26" lean-forward="true" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
           </folding>
         </state>
       </provider>

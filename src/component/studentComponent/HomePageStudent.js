@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import HeaderComponent from './HeaderComponent'
-import HomeComponent from './HomeComponent'
-import PopularComponent from './PopularComponent'
-import RegisterComponent from './RegisterComponent'
-import ServiceComponent from './ServiceComponent'
-import EventsComponent from './EventsComponent'
-import FoooterComponent from'./FoooterComponent'
-import SearchComponent from './SearchComponent'
+import HeaderComponent from './HeaderStudent'
+import HomeComponent from '../HomeComponent'
+import PopularComponent from '../PopularComponent'
+import RegisterComponent from '../RegisterComponent'
+import ServiceComponent from '../ServiceComponent'
+import EventsComponent from '../EventsComponent'
+import FoooterComponent from '../FoooterComponent'
+import SearchComponent from '../SearchComponent'
 import {connect} from "react-redux";
 import { Redirect} from 'react-router-dom'
 

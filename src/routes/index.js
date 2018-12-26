@@ -1,20 +1,20 @@
 import React from 'react'
 import { Route, Switch } from 'react-router'
 import HomePageTeacher from '../component/HomePageTeacher'
-import HomePageStudent from '../component/HomePageStudent'
+import HomePageStudent from '../component/studentComponent/HomePageStudent'
 import PopularComponent from "../component/PopularComponent";
 import Singin from '../component/SignInComponent'
 import Singup from '../component/SignUpComponent'
-import ListExam from '../component/ListExamComponent'
-import MyTest from '../component/studentComponent/MyTestComponent'
-import TestComponent from '../component/TakeATest'
+import ListExam from '../component/studentComponent/ListExam'
+import MyTest from '../component/studentComponent/MyTest'
+import TestComponent from '../component/studentComponent/TakeATest'
 import CreateTestComponent from '../component/teacherComponent/CreateTest'
 import EditTestComponent from '../component/teacherComponent/EditTest'
 import StudentCharts from '../component/StudentCharts'
 import TeacherCharts from '../component/TeacherCharts'
 import TeacherTestList from '../component/teacherComponent/TeacherTestList'
 import StudentHistoryExam from '../component/studentComponent/StudentHistoryExam'
-import DetailExam from '../component/DetailedExamQuestions'
+import DetailExam from '../component/studentComponent/DetailedTestAndResult'
 const routes = (
     <div>
         <Switch>

@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
-import '../App.css';
-import HeaderComponent from './HeaderComponent.js'
-import FoooterComponent from './FoooterComponent.js'
-import '../styles/test_styles.css'
+import '../../App.css';
+import HeaderComponent from './HeaderStudent.js'
+import FoooterComponent from '../FoooterComponent.js'
+import '../../styles/test_styles.css'
 import {connect} from "react-redux";
 import { Link} from 'react-router-dom'
-
 import axios from 'axios';
 
 var listExam = [{ "_id": "5c16635508943720ec5056fb", "id": "QT0001", "examId": "EX0001", "text": "Gía trị của biểu thức x=...+y/abs(z)", "optionA": "Câu A", "optionB": "Câu B", "optionC": "Câu C", "optionD": "Câu D", "correctOption": "A", "point": "0.5", "__v": 0 }];
@@ -15,40 +14,61 @@ var listAnswer = [];
 class TestComponent extends Component {
     constructor(props) {
         super(props);
-
-
+        this.SubmitTest = this.SubmitTest.bind(this);
+        this.handleOptionChange = this.handleOptionChange.bind(this);
         this.state = {
             exam: listExam,
             titleExam: title,
-            answer:[],
-            score:0,
-
         };
     }
 
     componentDidMount() {
-        console.log('STATE',this.props.match.params.id);
-
-        var req = 'http://localhost:4200/detail-ex/?id=' + this.props.match.params.id;
+        console.log('STATE',this.props.match.params.idExam);
+        var idExam = this.props.match.params.idExam;
+        var req = 'http://localhost:4200/getTestExam?id=' + idExam;
         console.log(req);
         axios.get(req)
-            .then(res => {
-                var data = res.data;
+        .then(res => {
+            var data = res.data;
+          
+            this.setState({
+                exam: data.data,
+                titleExam: res.data.title
+            })
+            console.log(this.state.exam.length);
+        });
 
-                this.setState({
-                    exam: data.data,
-                    titleExam: res.data.title,
-                    answer:data.answer,
-                    score:data.score,
-                })
-                console.log(this.state.exam.length);
-            });
+      
+    }
 
+    handleOptionChange(changeEvent){
+        console.log(listAnswer);
+        for(var i = 0;i< listAnswer.length;i++){
+            if( changeEvent.target.name === i){
+                listAnswer[i] = changeEvent.target.value;
+                return;
+            }
+        };
+
+        var data = {
+            id: changeEvent.target.name,
+            value: changeEvent.target.value
+        }
+
+        listAnswer.push(data);
 
     }
 
+    SubmitTest = () => {
+        const payload = {
+            listAnswer:listAnswer,
+            idExam:this.state.titleExam[0].id,
+            studentId:this.props.users.id
+        };
+        axios.post('http://localhost:4200/updateResultTest', payload);
 
-
+        window.alert('Bạn đã hoàn thành bài test');
+    }
 
     render() {
 
@@ -66,22 +86,13 @@ class TestComponent extends Component {
                     <div className="col-xs-2 col-sm-2 col-md-2 col-lg-2 mt-30  ">
                         <div className=" cau_hoi2">
                             Nội dung đề thi
-                        </div>
+                            </div>
                         <div className="cau_hoi noi_dung">
                             <ul>
                                 <li>Thời gian: {this.state.titleExam[0].time}</li>
                                 <li>Số lượng: {this.state.exam.length} câu</li>
-                                <li>Môn học: {this.state.titleExam[0].subject}</li>
+                                 <li>Môn học: {this.state.titleExam[0].subject}</li>
                                 <li>Đối tượng: {this.state.titleExam[0].object}</li>
-                            </ul>
-                        </div>
-                        <span></span>
-                        <div className=" cau_hoi2">
-                            Kết quả bài thi
-                        </div>
-                        <div className="score">
-                            <ul>
-                                <li>Điểm: {this.state.score}đ</li>
                             </ul>
                         </div>
                     </div>
@@ -89,27 +100,29 @@ class TestComponent extends Component {
                         <div className="test_center mt-3"><h3>Đề thi mã #{this.state.exam[0].examId}</h3></div>
                         <br></br>
                         {/* Danh sach cau hoi */}
-                        <p className="cau_hoi2">Đáp án đúng được tô đậm màu xanh</p>
+                        <p className="cau_hoi2">Tìm đáp án đúng của câu hỏi sau</p>
                         <div>{this.state.exam.map((exam,index) => {
                             return <div className="cau_hoi ml-5">
                                 <pre>
                                     Câu {index+1}: {exam.text}
-
                                 </pre>
                                 <br></br>
                                 <div className="ml-5 dap-an">
-                                    <input type="radio" id="Fastlearning" name = {index} value='A' checked={this.state.answer[index]==='A'?true:false} ></input>
-                                    <label Style={exam.correctOption==='A'?"background-color:lightgreen;":""}  for="Fastlearning">&nbsp; &nbsp;{exam.optionA}</label><br />
-                                    <input type="radio" name = {index} value = 'B' checked={this.state.answer[index]==='B'?true:false}></input>
-                                    <label Style={exam.correctOption==='B'?"background-color:lightgreen;":""}>&nbsp; &nbsp;{exam.optionB}</label><br />
-                                    <input type="radio" name = {index} value='C' checked={this.state.answer[index]==='C'?true:false}></input>
-                                    <label Style={exam.correctOption==='C'?"background-color:lightgreen;":""}>&nbsp; &nbsp;{exam.optionC}</label> <br />
-                                    <input type="radio" name = {index} value = 'D' checked={this.state.answer[index]==='D'?true:false}></input>
-                                    <label Style={exam.correctOption==='D'?"background-color:lightgreen;":""}>&nbsp; &nbsp;{exam.optionD}</label>
+                                    <input type="radio" id="Fastlearning" name = {index} value='A' onChange={this.handleOptionChange}></input>
+                                    <label for="Fastlearning">&nbsp; &nbsp;{exam.optionA}</label><br />
+                                    <input type="radio" name = {index} value = 'B' onChange={this.handleOptionChange}></input>
+                                    <label>&nbsp; &nbsp;{exam.optionB}</label><br />
+                                    <input type="radio" name = {index} value='C' onChange={this.handleOptionChange}></input>
+                                    <label>&nbsp; &nbsp;{exam.optionC}</label> <br />
+                                    <input type="radio" name = {index} value = 'D'  onChange={this.handleOptionChange}></input>
+                                    <label>&nbsp; &nbsp;{exam.optionD}</label>
                                 </div>
                             </div>
                         })}</div>
-
+                      
+                        <div className="test_center">
+                            <button className="button" onClick = {this.SubmitTest}>Hoàn thành</button>
+                        </div>
 
 
                         <p className="color_black"></p>
@@ -122,14 +135,14 @@ class TestComponent extends Component {
 
                         <div className="  mt-3">
                             <div className="">
-                                <img className="images_gioithieu ml-3" src={require('../images/course_1.jpg')} alt="https://unsplash.com/@kellybrito" />
+                                <img className="images_gioithieu ml-3" src={require('../../images/course_1.jpg')} alt="https://unsplash.com/@kellybrito" />
                                 <div className=" text-center ml-3">
                                     <div className=""><a href="courses.html">A complete guide to design</a></div>
                                     <div className="">Adobe Guide, Layes, Smart Objects etc...</div>
                                 </div>
                                 <div className="khung3 d-flex flex-row align-items-center ml-3">
                                     <div className="course_author_image">
-                                        <img src={require('../images/author.jpg')} alt="https://unsplash.com/@mehdizadeh" />
+                                        <img src={require('../../images/author.jpg')} alt="https://unsplash.com/@mehdizadeh" />
                                     </div>
                                     <div className="">Michael Smith, <span>Author</span></div>
                                     <div className="course_price d-flex flex-column align-items-center justify-content-center"><span>$29</span></div>
@@ -139,14 +152,14 @@ class TestComponent extends Component {
 
                         <div className="  mt-3">
                             <div className="">
-                                <img className="images_gioithieu ml-3" src={require('../images/course_2.jpg')} alt="https://unsplash.com/@kellybrito" />
+                                <img className="images_gioithieu ml-3" src={require('../../images/course_2.jpg')} alt="https://unsplash.com/@kellybrito" />
                                 <div className=" text-center ml-3">
                                     <div className=""><a href="courses.html">A complete guide to design</a></div>
                                     <div className="">Adobe Guide, Layes, Smart Objects etc...</div>
                                 </div>
                                 <div className="khung3 d-flex flex-row align-items-center ml-3">
                                     <div className="course_author_image">
-                                        <img src={require('../images/author.jpg')} alt="https://unsplash.com/@mehdizadeh" />
+                                        <img src={require('../../images/author.jpg')} alt="https://unsplash.com/@mehdizadeh" />
                                     </div>
                                     <div className="">Michael Smith, <span>Author</span></div>
                                     <div className="course_price d-flex flex-column align-items-center justify-content-center"><span>$29</span></div>

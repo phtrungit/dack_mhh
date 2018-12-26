@@ -168,7 +168,7 @@ class Content extends React.Component {
     }
 };
 
-class MyTestComponent extends React.Component {
+class MyTest extends React.Component {
     constructor(props) {
         super(props);
         // Don't call this.setState() here!
@@ -250,4 +250,4 @@ class MyTestComponent extends React.Component {
     }
 }
 
-export default MyTestComponent;
+export default MyTest;

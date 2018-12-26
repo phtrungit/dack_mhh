@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import HeaderComponent from './HeaderComponent'
+import HeaderComponent from './studentComponent/HeaderStudent'
 import HomeComponent from './HomeComponent'
 import PopularComponent from './PopularComponent'
 import RegisterComponent from './RegisterComponent'

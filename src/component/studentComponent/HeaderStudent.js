@@ -2,14 +2,14 @@ import React, { Component } from 'react';
 import {connect} from "react-redux";
 import { Link} from 'react-router-dom'
 import accountIcon from '@material-ui/icons/AccountCircle'
-class HeaderComponent extends Component {
+class HeaderStudent extends Component {
   render() {
     return (
       <header className="header d-flex flex-row">
 		<div className="header_content d-flex flex-row align-items-center">
 			<div className="logo_container">
 				<div class="logo">
-                <img src={require('../images/logo.png')}/>
+                <img src={require('../../images/logo.png')}/>
 					<span>Ex-Ol</span>
                 </div>
 			</div>
@@ -26,7 +26,7 @@ class HeaderComponent extends Component {
 			</nav>
 		</div>
         <div class="header_side d-flex flex-row justify-content-center align-items-center">
-			<img src= {require('../images/accountIcon.png')} alt=""></img>
+			<img src= {require('../../images/accountIcon.png')} alt=""></img>
 			<span>{this.props.users.displayName}</span>
             <span><Link to ='/logout'>Đăng xuất</Link></span>
 		</div>
@@ -47,4 +47,4 @@ const mapStateToProps =(state) =>{
     };
 
 }
-export default connect(mapStateToProps) (HeaderComponent);
+export default connect(mapStateToProps) (HeaderStudent);

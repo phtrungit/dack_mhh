@@ -8,8 +8,8 @@ import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
-import Header from './HeaderComponent';
-import Footer from './FoooterComponent';
+import Header from './HeaderStudent';
+import Footer from '../FoooterComponent';
 import axios from 'axios';
 import { compose } from 'redux'
 import {connect} from "react-redux";
