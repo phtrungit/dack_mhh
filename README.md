@@ -14,7 +14,7 @@ You will also see any lint errors in the console.
 
 ### `npm run server`
 
-Runs the server to connect app with database
+Run the server to connect app with database
 
 ### `npm test`
 
