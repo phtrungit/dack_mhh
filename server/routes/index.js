@@ -82,19 +82,41 @@ indexRouter.route('/getTestExam').get(function (req, res) {
 
 
 //---------------------Cập nhật đáp án bài thi-----------------
-indexRouter.route('/updateResultTest').post(function (req, res) {
+indexRouter.route('/updateResultTest').post(async function (req, res) {
     const listAnswer=req.body.listAnswer.sort(req.body.listAnswer.id).reverse();
     const answerSheet=[];
+    const resultSheet=[];
+    let score=10;
+
     for (let i=0;i<listAnswer.length;i++)
     {
         answerSheet[i]=listAnswer[i].value
     }
+    await Questions.find({ examId: req.body.idExam }, function (err, serverports) {
+        if (err) {
+            console.log(err);
+        }
+        else {
+            for (let i=0;i<serverports.length;i++)
+            {
+                console.log('answer-result',answerSheet[i],serverports[i].correctOption)
+                if(answerSheet[i]!==serverports[i].correctOption)
+                {
+                    score=score-1;
+                    console.log('score',score);
+                }
+
+
+            }
+        }
+    });
+    console.log('finalScore',score)
     const d =Date.now();
     const studentExam = new StudentExams({
         id: 'STE'+req.body.studentId+d,
         examId: req.body.idExam,
         studentId: req.body.studentId,
-        score: 10,
+        score: score,
         answerSheet: answerSheet,
 
     })
