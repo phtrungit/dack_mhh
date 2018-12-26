@@ -1,8 +1,20 @@
 import React, { Component } from 'react';
 import {connect} from "react-redux";
 import { Link} from 'react-router-dom'
+import Button from '@material-ui/core/Button'
 import accountIcon from '@material-ui/icons/AccountCircle'
+import {logOut} from "../../actions";
+import axios from "axios/index";
 class HeaderStudent extends Component {
+    constructor() {
+        super()
+        this.handleSubmit = this.handleSubmit.bind(this)
+    }
+    handleSubmit(event) {
+        event.preventDefault()
+        console.log('handleSubmit')
+        this.props.logout();
+    }
   render() {
     return (
       <header className="header d-flex flex-row">
@@ -28,7 +40,7 @@ class HeaderStudent extends Component {
         <div class="header_side d-flex flex-row justify-content-center align-items-center">
 			<img src= {require('../../images/accountIcon.png')} alt=""></img>
 			<span>{this.props.users.displayName}</span>
-            <span><Link to ='/logout'>Đăng xuất</Link></span>
+			<span><Button  onClick={this.handleSubmit}>Đăng xuất</Button></span>
 		</div>
 
 		<div className="hamburger_container">
@@ -39,6 +51,13 @@ class HeaderStudent extends Component {
     );
   }
 }
+const mapDispatchToProps = dispatch => {
+    return {
+        logout: () => {
+            dispatch(logOut())
+        }
+    }
+}
 const mapStateToProps =(state) =>{
 
 
@@ -47,4 +66,4 @@ const mapStateToProps =(state) =>{
     };
 
 }
-export default connect(mapStateToProps) (HeaderStudent);
+export default connect(mapStateToProps,mapDispatchToProps) (HeaderStudent);
