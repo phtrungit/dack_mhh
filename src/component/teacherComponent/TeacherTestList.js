@@ -1,6 +1,4 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { withStyles } from '@material-ui/core/styles';
+import React, { Component } from 'react';
 import Table from '@material-ui/core/Table';
 import Button from '@material-ui/core/Button'
 import TableBody from '@material-ui/core/TableBody';
@@ -8,9 +6,16 @@ import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
-import Header from './HeaderTeacher';
-import Footer from '../FooterComponent';
+import { Redirect} from 'react-router-dom'
+import Header from './HeaderTeacher'
+import Footer from '../FooterComponent'
+import { compose } from 'redux'
+import '../../styles/teacherTestList.css'
+import '../../App.css';
 import axios from 'axios';
+import '../../styles/test_styles.css'
+import {connect} from "react-redux";
+import {withStyles} from "@material-ui/core/styles/index";
 const styles = theme => ({
     root: {
         width: '100%',
@@ -21,110 +26,126 @@ const styles = theme => ({
     table: {
         minWidth: 700,
     },
-    title:{
+    title: {
         marginTop: '200px',
-        fontSize:'50px',
-        textAlign:'center',
-        color:'#000000',
+        fontSize: '50px',
+        textAlign: 'center',
+        color: '#000000',
     },
 });
 
+
 const rows = [
-    {id: 'D001', title: 'Trắc nghiệm toán nâng cao', creator:'Trung Phạm'}
+    { id: 'D001', title: 'Trắc nghiệm toán nâng cao', time: 'null', number: 'null' }
 ];
 
-class SimpleTable extends React.Component{
-    constructor(props){
-        super(props)
-        this.BeginTest = this.BeginTest.bind(this);
-        this.showTeacher = this.showTeacher.bind(this);
+
+class EditTestComponent extends Component {
+    constructor(props) {
+        super(props);
+        this.getStatistics = this.getStatistics.bind(this);
         this.state = {
-            exam: { 
-                data: rows,
-                teacher: 'null'
-            }
+            data: rows
         }
     }
-
-    showTeacher(){
-        return 'AAAA';
-    }
-
-    BeginTest(e,row){
+    getStatistics(e,row){
         console.log(row);
-        var  path = `test`;
-        this.props.history.push(path,{idExam: row.id });
+        var  path = `/testStatistics/${row.id}`;
+        this.props.history.push(path);
     }
-
-
     componentDidMount() {
-        axios.get('http://localhost:4200/selectTeacherTestList?id=EX0001')
-        .then(res => {
-            var data = res.data;
-            console.log(data);
-            this.setState({
-                exam: {
-                    data: data,
-                }
-            })
-        });
+        axios.get(`http://localhost:4200/selectExam?id=${this.props.users.id}`)
+            .then(res => {
+                var data = res.data;
+                console.log(data);
+                this.setState({
+                        data: data,
+                    }
+                )
+            });
 
-      
     }
 
-    render(){
+    render() {
         const {classes}=this.props;
-        return (
-        <div>
-            <Header/>
-            <div className={classes.title}>
-                Danh sách học sinh tham gia bài thi
-            </div>
-            <Paper className={classes.root}>
-                <Table className={classes.table}>
-                    <TableHead>
-                        <TableRow>
-                            <TableCell>Mã học sinh</TableCell>
-                            <TableCell >Tên học sinh</TableCell>
-                            <TableCell >Tên tài khoảng</TableCell>
-                            <TableCell >Điểm</TableCell>
-                            <TableCell >Xem bài làm</TableCell>
-                        </TableRow>
-                    </TableHead>
-                    <TableBody>
-                        {this.state.exam.data.map(row => {
-                            return (
-                                <TableRow key={row.id}>
-                                    <TableCell component="th" scope="row">
-                                        {row.id}
-                                    </TableCell>
-                                    <TableCell> {row.displayName}</TableCell>
-                                    <TableCell> {row.username}</TableCell>
-                                    <TableCell> {row.score}</TableCell>
-                                    <TableCell>
-                                        <Button color="primary">
-                                            Xem
-                                        </Button>
-                                    </TableCell>
-                                </TableRow>
-                            );
-                        })}
-                    </TableBody>
-                </Table>
-            </Paper>
-            <Footer/>
-        </div>
+        if(this.props.isLogin===false)
+            return <Redirect to={'/login'}/>
+        else {
+            return (
+                <div>
+                    <Header/>
+                    <div className="container mt-30 color_black mb-20 ">
+                        <div className="row ">
+                            <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                <div className="test_center">
+                                    <h2>Danh sách đề thi</h2>
+                                </div>
+                            </div>
 
-    );
-}
+                            <div className="col-xs-9 col-sm-9 col-md-9 col-lg-9 mt-30   ">
+                                <h3>Danh sách đề thi đã tạo</h3>
+                                <br></br>
+                                <Paper>
+                                    <Table>
+                                        <TableHead>
+                                            <TableRow>
+                                                <TableCell>Mã đề thi</TableCell>
+                                                <TableCell>Tên đề thi</TableCell>
+                                                <TableCell>Môn học</TableCell>
+                                                <TableCell>Thời gian</TableCell>
+                                                <TableCell>Số lượng</TableCell>
+                                                <TableCell>Chỉnh sửa</TableCell>
+                                                <TableCell>Thống kê</TableCell>
+                                            </TableRow>
+                                        </TableHead>
+                                        <TableBody>
+                                            {this.state.data.map(row => {
+                                                return (
+                                                    <TableRow key={row.id}>
+                                                        <TableCell component="th" scope="row">
+                                                            {row.id}
+                                                        </TableCell>
+                                                        <TableCell> {row.title}</TableCell>
+                                                        <TableCell> {row.subject}</TableCell>
+                                                        <TableCell>{row.time}</TableCell>
+                                                        <TableCell>{row.number}</TableCell>
+                                                        <TableCell>
+                                                            <Button color="primary">
+                                                                Chỉnh sửa
+                                                            </Button>
+                                                        </TableCell>
+                                                        <TableCell>
+                                                            <Button color="primary" onClick={e => this.getStatistics(e, row)}>
+                                                                Thống kê
+                                                            </Button>
+                                                        </TableCell>
+                                                    </TableRow>
+                                                );
+                                            })}
+                                        </TableBody>
+                                    </Table>
+                                </Paper>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            );
+        }
+    }
 }
 const mapStateToProps =(state) =>{
 
 
     return{
-        users: state.auth.currentUser
+        users: state.auth.currentUser,
+        isLogin:state.auth.isLogin
     };
 
 }
-
-export default withStyles(styles)(SimpleTable);
+export default compose(
+    connect(mapStateToProps),
+    withStyles(styles)
+)(EditTestComponent);
