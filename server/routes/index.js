@@ -62,6 +62,28 @@ indexRouter.route('/createExam').post(function (req,res,next) {
 
 })
 
+// -------------------- Tạo câu hỏi----------------
+indexRouter.route('/createQuestion').post(function (req,res,next) {
+    console.log('reqbodyQuestion',req.body);
+    const d =Date.now();
+    const question = new Questions({
+        id: 'QT'+req.body.examId+d,
+        examId: req.body.examId,
+        text: req.body.text,
+        optionA: req.body.optionA,
+        optionB: req.body.optionB,
+        optionC: req.body.optionC,
+        optionD: req.body.optionD,
+        correctOption: req.body.correctOption,
+        point:parseInt(req.body.point)
+    })
+    question.save((err, savedQuestion) => {
+        if (err) return res.json(err)
+        res.json({question: savedQuestion})
+    })
+
+
+})
 
 // -------------------- Lấy nội dung bài test bằng id của giáo viên ----------------
 indexRouter.route('/selectExam').get((req, res) => {
@@ -224,7 +246,7 @@ indexRouter.route('/selectTeacherTestList').get((req, res) => {
         }
     });
 })
-//-----------Lấy lịch sử làm baicf của học sinh---------------
+//-----------Lấy lịch sử làm bài của học sinh---------------
 indexRouter.route('/selectstudenthistoryexam').get((req, res) => {
     console.log(req.query.id);
     StudentExams.find({ studentId: req.query.id }, function (err, list) {

@@ -31,6 +31,7 @@ class HeaderTeacher extends Component {
                                 <li className="main_nav_item"><Link to ='/teachertestlist'>Danh sách bài thi đã tạo</Link></li>
                                 <li className="main_nav_item"><Link to ='/studentscharts'>Bảng xếp hạng học sinh</Link></li>
                                 <li className="main_nav_item"><Link to ='/teacherscharts'>Bảng xếp hạng giáo viên</Link></li>
+                                <li className="main_nav_item"><Link to ='/createQuestionTest'>Test menu</Link></li>
                             </ul>
                         </div>
                     </nav>

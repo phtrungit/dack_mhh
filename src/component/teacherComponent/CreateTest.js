@@ -12,6 +12,8 @@ import '../../App.css';
 import axios from 'axios';
 import '../../styles/test_styles.css'
 import {connect} from "react-redux";
+import {compose} from "redux";
+import {withStyles} from "@material-ui/core/styles/index";
 const styles = theme => ({
     root: {
         width: '100%',
@@ -20,7 +22,10 @@ const styles = theme => ({
         marginBottom: '100px',
     },
     table: {
-        minWidth: 700,
+        minWidth: 1100,
+    },
+    paper: {
+        minWidth: 1100,
     },
     title: {
         marginTop: '200px',
@@ -49,11 +54,17 @@ class EditTestComponent extends Component {
         }
         this.handleSubmit = this.handleSubmit.bind(this)
         this.handleChange = this.handleChange.bind(this)
+        this.addQuestion = this.addQuestion.bind(this);
     }
     handleChange(event) {
         this.setState({
             [event.target.name]: event.target.value
         })
+    }
+    addQuestion(e,row){
+        console.log(row);
+        var  path = `/createQuestionTest/${row.id}`;
+        this.props.history.push(path);
     }
     async handleSubmit(event) {
         event.preventDefault()
@@ -119,8 +130,8 @@ class EditTestComponent extends Component {
                             <div className="col-xs-9 col-sm-9 col-md-9 col-lg-9 mt-30   ">
                                 <h3>Danh sách đề thi đã tạo</h3>
                                 <br></br>
-                                <Paper>
-                                    <Table>
+                                <Paper className={classes.paper}>
+                                    <Table className={classes.table}>
                                         <TableHead>
                                             <TableRow>
                                                 <TableCell>Mã đề thi</TableCell>
@@ -128,7 +139,8 @@ class EditTestComponent extends Component {
                                                 <TableCell>Môn học</TableCell>
                                                 <TableCell>Thời gian</TableCell>
                                                 <TableCell>Số lượng</TableCell>
-                                                <TableCell>Chỉnh sửa</TableCell>
+                                                <TableCell>Số câu hỏi</TableCell>
+                                                <TableCell>Action</TableCell>
                                             </TableRow>
                                         </TableHead>
                                         <TableBody>
@@ -138,13 +150,17 @@ class EditTestComponent extends Component {
                                                         <TableCell component="th" scope="row">
                                                             {row.id}
                                                         </TableCell>
-                                                        <TableCell> {row.title}</TableCell>
-                                                        <TableCell> {row.subject}</TableCell>
-                                                        <TableCell>{row.time}</TableCell>
+                                                        <TableCell align="left"> {row.title}</TableCell>
+                                                        <TableCell align="left"> {row.subject}</TableCell>
+                                                        <TableCell >{row.time}</TableCell>
                                                         <TableCell>{row.number}</TableCell>
-                                                        <TableCell>
+                                                        <TableCell>{row.number}</TableCell>
+                                                        <TableCell align="left">
                                                             <Button color="primary">
                                                                 Chỉnh sửa
+                                                            </Button>
+                                                            <Button onClick={e => this.addQuestion(e, row)} color="primary">
+                                                                Thêm câu hỏi
                                                             </Button>
                                                         </TableCell>
                                                     </TableRow>
@@ -231,4 +247,7 @@ const mapStateToProps =(state) =>{
     };
 
 }
-export default connect(mapStateToProps)(EditTestComponent);
+export default compose(
+    connect(mapStateToProps),
+    withStyles(styles)
+)(EditTestComponent);

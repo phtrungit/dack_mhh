@@ -8,7 +8,7 @@ import ListExam from '../component/studentComponent/ListExam'
 import MyTest from '../component/studentComponent/MyTest'
 import TestComponent from '../component/studentComponent/TakeATest'
 import CreateTestComponent from '../component/teacherComponent/CreateTest'
-import CreateQuestionTest from '../component/teacherComponent/CreateTest'
+import CreateQuestionTest from '../component/teacherComponent/CreateQuestionTest'
 import StudentCharts from '../component/StudentCharts'
 import TeacherCharts from '../component/TeacherCharts'
 import TeacherTestList from '../component/teacherComponent/TeacherTestList'
@@ -27,7 +27,7 @@ const routes = (
             <Route path="/myex" component={MyTest} />
             <Route path="/test/:idExam" component={TestComponent} />
             <Route path="/createTest" component={CreateTestComponent} />
-            <Route path="/createQuestionTest" component={CreateQuestionTest} />
+            <Route path="/createQuestionTest/:id" component={CreateQuestionTest} />
             <Route path="/studentscharts" component={StudentCharts} />
             <Route path="/teacherscharts" component={TeacherCharts} />
             <Route path="/teachertestlist" component={TeacherTestList} />
