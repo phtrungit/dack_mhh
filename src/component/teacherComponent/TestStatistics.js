@@ -36,7 +36,7 @@ const rows = [
 class SimpleTable extends React.Component{
     constructor(props){
         super(props)
-        this.BeginTest = this.BeginTest.bind(this);
+        this.getExamStudent = this.getExamStudent.bind(this);
         this.showTeacher = this.showTeacher.bind(this);
         this.state = {
             exam: {
@@ -50,10 +50,10 @@ class SimpleTable extends React.Component{
         return 'AAAA';
     }
 
-    BeginTest(e,row){
+    getExamStudent(e,row){
         console.log(row);
-        var  path = `test`;
-        this.props.history.push(path,{idExam: row.id });
+        var  path = `/detail-ex/${row.idStudentExam}`;
+        this.props.history.push(path);
     }
 
 
@@ -100,7 +100,7 @@ class SimpleTable extends React.Component{
                                         <TableCell> {row.username}</TableCell>
                                         <TableCell> {row.score}</TableCell>
                                         <TableCell>
-                                            <Button color="primary">
+                                            <Button color="primary" onClick={e => this.getExamStudent(e, row)}>
                                                 Xem
                                             </Button>
                                         </TableCell>

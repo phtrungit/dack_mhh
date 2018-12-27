@@ -187,7 +187,8 @@ indexRouter.route('/selectTeacherTestList').get((req, res) => {
                                     score: list[listItem].score,
                                     id: chart[chartItem].id,
                                     username: chart[chartItem].username,
-                                    displayName: chart[chartItem].displayName
+                                    displayName: chart[chartItem].displayName,
+                                    idStudentExam:list[listItem].id
                                 }
                                 break;
                             }
@@ -237,6 +238,9 @@ indexRouter.route('/detail-ex').get(async function (req, res) {
     let examId='';
     let answer=[];
     let score=0;
+    let creator='';
+    let student='';
+    let studentId='';
     console.log('idStudentEx',id);
 
     await StudentExams.findOne({ id: id }, function (err, studentExam) {
@@ -248,28 +252,45 @@ indexRouter.route('/detail-ex').get(async function (req, res) {
             examId=studentExam.examId
             answer=studentExam.answerSheet
             score=studentExam.score
+            studentId=studentExam.studentId
             console.log('answ',answer)
             console.log('exID',studentExam.id);
         }
     });
-
+    await Student.findOne({ id: studentId }, function (err, student_g) {
+        if (err) {
+            console.log(err);
+        }
+        else {
+           student=student_g.displayName
+        }
+    });
     console.log('exID',examId);
     Questions.find({ examId: examId },async function (err, serverports) {
         if (err) {
             console.log(err);
         }
         else {
-            Exams.find({ id: examId }, function (err, data) {
+            Exams.find({ id: examId },async function (err, data) {
                 if (err) {
                     console.log(err);
                 }
                 else {
-
+                    await Teacher.findOne({ id: data[0].creator}, function (err, teacher_g) {
+                        if (err) {
+                            console.log(err);
+                        }
+                        else {
+                            creator=teacher_g.displayName
+                        }
+                    });
                     var result = {
                         data: serverports,
                         title: data,
                         answer:answer,
-                        score:score
+                        score:score,
+                        student:student,
+                        teacher:creator
                     }
                     res.json(result);
                 }

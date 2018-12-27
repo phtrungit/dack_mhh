@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import '../../App.css';
-import HeaderComponent from './HeaderStudent.js'
+import HeaderStudent from './HeaderStudent.js'
+import HeaderTeacher from '../teacherComponent/HeaderTeacher'
 import FooterComponent from '../FooterComponent.js'
 import '../../styles/test_styles.css'
 import {connect} from "react-redux";
@@ -18,11 +19,12 @@ class TestComponent extends Component {
 
 
         this.state = {
+            student:'',
             exam: listExam,
             titleExam: title,
             answer:[],
             score:0,
-
+            creator:'',
         };
     }
 
@@ -36,10 +38,13 @@ class TestComponent extends Component {
                 var data = res.data;
 
                 this.setState({
+                    data:data,
                     exam: data.data,
                     titleExam: res.data.title,
                     answer:data.answer,
                     score:data.score,
+                    student:data.student,
+                    creator:data.teacher,
                 })
                 console.log(this.state.exam.length);
             });
@@ -53,9 +58,10 @@ class TestComponent extends Component {
     render() {
 
         return (
-
+            <div>
+                {this.props.users.id.substr(0,2)==='TC'?<HeaderTeacher/>:<HeaderStudent/>}
             <div className="container mt-30 color_black ">
-                <HeaderComponent/>
+
                 <div className="row ">
                     <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                         <div className="test_center">
@@ -69,14 +75,24 @@ class TestComponent extends Component {
                         </div>
                         <div className="cau_hoi noi_dung">
                             <ul>
+                                <li>Người tạo: {this.state.creator}</li>
                                 <li>Thời gian: {this.state.titleExam[0].time}</li>
                                 <li>Số lượng: {this.state.exam.length} câu</li>
                                 <li>Môn học: {this.state.titleExam[0].subject}</li>
                                 <li>Đối tượng: {this.state.titleExam[0].object}</li>
+
                             </ul>
                         </div>
                         <span></span>
-                        <div className=" cau_hoi2">
+                        <div className="cau_hoi2">
+                            Chi tiết bài thi
+                        </div>
+                        <div>
+                            <ul>
+                                <li>Người làm: {this.state.student}</li>
+                            </ul>
+                        </div>
+                        <div className="cau_hoi2">
                             Kết quả bài thi
                         </div>
                         <div className="score">
@@ -159,7 +175,7 @@ class TestComponent extends Component {
 
                 </div>
             </div>
-
+            </div>
 
 
 
