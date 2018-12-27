@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ed15effd-c497-4fd2-a157-b44227468885" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/models/exams.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/exams.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/routes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/component/teacherComponent/CreateTest.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/teacherComponent/CreateQuestionTest.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/component/teacherComponent/EditTest.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/teacherComponent/CreateTest.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/component/teacherComponent/HeaderTeacher.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/teacherComponent/HeaderTeacher.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/teacherComponent/TeacherTestList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/teacherComponent/TeacherTestList.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -22,86 +16,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/routes/index.js">
+      <file leaf-file-name="TeacherTestList.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/component/teacherComponent/TeacherTestList.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="193">
-              <caret line="23" column="54" lean-forward="true" selection-start-line="23" selection-start-column="54" selection-end-line="23" selection-end-column="54" />
-              <folding>
-                <element signature="e#0#25#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CreateTest.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/component/teacherComponent/CreateTest.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="215">
-              <caret line="43" column="22" lean-forward="true" selection-start-line="43" selection-start-column="22" selection-end-line="43" selection-end-column="22" />
+            <state relative-caret-position="22">
+              <caret line="95" column="49" selection-start-line="95" selection-start-column="49" selection-end-line="95" selection-end-column="49" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/routes/index.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="287">
-              <caret line="59" column="18" selection-start-line="59" selection-start-column="18" selection-end-line="59" selection-end-column="18" />
-              <folding>
-                <element signature="e#1182#1392#0" />
-                <element signature="e#1524#2103#0" />
-                <element signature="e#2242#3603#0" />
-                <element signature="e#3699#3906#0" />
-                <element signature="e#3968#4181#0" />
-                <element signature="e#4243#4456#0" />
-                <element signature="e#4520#5767#0" />
-                <element signature="e#5834#6922#0" />
-                <element signature="e#7079#9009#0" />
-                <element signature="e#9070#9905#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TakeATest.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/component/studentComponent/TakeATest.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="18">
-              <caret line="6" column="38" lean-forward="true" selection-start-line="6" selection-start-column="38" selection-end-line="6" selection-end-column="38" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SignInComponent.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/component/SignInComponent.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
-              <caret line="124" column="67" selection-start-line="124" selection-start-column="38" selection-end-line="124" selection-end-column="67" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="exams.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/seed/exams.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="10" column="12" lean-forward="true" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="12" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="exams.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/models/exams.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="9" column="39" lean-forward="true" selection-start-line="9" selection-start-column="39" selection-end-line="9" selection-end-column="39" />
             </state>
           </provider>
         </entry>
@@ -183,7 +105,6 @@
         <option value="$PROJECT_DIR$/src/component/teacherComponent/DetailStudentInExam.js" />
         <option value="$PROJECT_DIR$/src/styles/teacherTestList.js" />
         <option value="$PROJECT_DIR$/src/styles/teacherTestList.css" />
-        <option value="$PROJECT_DIR$/src/component/teacherComponent/TeacherTestList.js" />
         <option value="$PROJECT_DIR$/src/component/teacherComponent/TestStatistics.js" />
         <option value="$PROJECT_DIR$/src/styles/test_styles.css" />
         <option value="$PROJECT_DIR$/src/component/studentComponent/DetailedTestAndResult.js" />
@@ -192,6 +113,7 @@
         <option value="$PROJECT_DIR$/server/models/exams.js" />
         <option value="$PROJECT_DIR$/server/routes/index.js" />
         <option value="$PROJECT_DIR$/src/component/teacherComponent/CreateTest.js" />
+        <option value="$PROJECT_DIR$/src/component/teacherComponent/TeacherTestList.js" />
       </list>
     </option>
   </component>
@@ -358,12 +280,12 @@
       <workItem from="1545375340508" duration="22297000" />
       <workItem from="1545555008722" duration="8487000" />
       <workItem from="1545731042451" duration="25081000" />
-      <workItem from="1545873563578" duration="11634000" />
+      <workItem from="1545873563578" duration="12630000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="149076000" />
+    <option name="totallyTimeSpent" value="150072000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
@@ -711,16 +633,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/component/teacherComponent/TeacherTestList.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="958">
-          <caret line="117" column="125" selection-start-line="117" selection-start-column="84" selection-end-line="117" selection-end-column="125" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/component/teacherComponent/CreateQuestionTest.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -803,8 +715,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/component/teacherComponent/CreateTest.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
-          <caret line="43" column="22" lean-forward="true" selection-start-line="43" selection-start-column="22" selection-end-line="43" selection-end-column="22" />
+        <state relative-caret-position="287">
+          <caret line="47" column="27" lean-forward="true" selection-start-line="47" selection-start-column="27" selection-end-line="47" selection-end-column="27" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/component/teacherComponent/TeacherTestList.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="95" column="49" selection-start-line="95" selection-start-column="49" selection-end-line="95" selection-end-column="49" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>

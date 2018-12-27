@@ -24,7 +24,12 @@ const styles = theme => ({
         marginBottom: '100px',
     },
     table: {
-        minWidth: 700,
+        minWidth: 1000,
+
+    },
+    paper: {
+        minWidth: 1000,
+
     },
     title: {
         marginTop: '200px',
@@ -32,6 +37,9 @@ const styles = theme => ({
         textAlign: 'center',
         color: '#000000',
     },
+    cot1:{
+        Width:'200px!'
+    }
 });
 
 
@@ -85,12 +93,12 @@ class EditTestComponent extends Component {
                             <div className="col-xs-9 col-sm-9 col-md-9 col-lg-9 mt-30   ">
                                 <h3>Danh sách đề thi đã tạo</h3>
                                 <br></br>
-                                <Paper>
-                                    <Table>
+                                <Paper className={classes.paper}>
+                                    <Table className={classes.table}>
                                         <TableHead>
                                             <TableRow>
                                                 <TableCell>Mã đề thi</TableCell>
-                                                <TableCell>Tên đề thi</TableCell>
+                                                <TableCell className={classes.cot1}>Tên đề thi</TableCell>
                                                 <TableCell>Môn học</TableCell>
                                                 <TableCell>Thời gian</TableCell>
                                                 <TableCell>Số lượng</TableCell>
@@ -105,7 +113,7 @@ class EditTestComponent extends Component {
                                                         <TableCell component="th" scope="row">
                                                             {row.id}
                                                         </TableCell>
-                                                        <TableCell> {row.title}</TableCell>
+                                                        <TableCell className={classes.cot1}> {row.title}</TableCell>
                                                         <TableCell> {row.subject}</TableCell>
                                                         <TableCell>{row.time}</TableCell>
                                                         <TableCell>{row.number}</TableCell>
