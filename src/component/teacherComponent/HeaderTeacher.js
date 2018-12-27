@@ -27,7 +27,7 @@ class HeaderTeacher extends Component {
                         <div className="main_nav">
                             <ul className="main_nav_list">
                                 <li className="main_nav_item"><Link to ='/'>Trang chủ</Link></li>
-                                <li className="main_nav_item"><Link to ='/edittest'>Tạo bài thi mới</Link></li>
+                                <li className="main_nav_item"><Link to ='/createTest'>Tạo bài thi mới</Link></li>
                                 <li className="main_nav_item"><Link to ='/teachertestlist'>Danh sách bài thi đã tạo</Link></li>
                                 <li className="main_nav_item"><Link to ='/studentscharts'>Bảng xếp hạng học sinh</Link></li>
                                 <li className="main_nav_item"><Link to ='/teacherscharts'>Bảng xếp hạng giáo viên</Link></li>

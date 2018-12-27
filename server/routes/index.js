@@ -41,6 +41,27 @@ indexRouter.route('/product').get(function (req, res) {
         }
     });
 });*/
+// -------------------- Tạo đề thi----------------
+indexRouter.route('/createExam').post(function (req,res,next) {
+    console.log('reqbodyCreateExam',req.body);
+                const d =Date.now();
+                const exam = new Exams({
+                    id: 'EX'+req.body.creator+d,
+                    title: req.body.tenDeThi,
+                    creator: req.body.creator,
+                    subject: req.body.subject,
+                    time: req.body.time,
+                    number:parseInt(req.body.soCauHoi) ,
+                    object: req.body.object,
+                })
+                exam.save((err, savedExam) => {
+                    if (err) return res.json(err)
+                    res.json({exam: savedExam})
+                })
+
+
+})
+
 
 // -------------------- Lấy nội dung bài test bằng id của giáo viên ----------------
 indexRouter.route('/selectExam').get((req, res) => {
@@ -144,6 +165,7 @@ indexRouter.route('/selectAllExam').get((req, res) => {
         }
     })
 })
+//-----------Bảng xếp hạnh học sinh---------------
 indexRouter.route('/selectStudentCharts').get((req, res) => {
     Student.find((err, chart) => {
         if (err) {
@@ -155,6 +177,7 @@ indexRouter.route('/selectStudentCharts').get((req, res) => {
         }
     }).sort( { point: -1 } );
 })
+//-----------Bảng xếp hạnh giáo viên---------------
 indexRouter.route('/selectTeacherCharts').get((req, res) => {
     Teacher.find((err, chart) => {
         if (err) {
@@ -166,6 +189,7 @@ indexRouter.route('/selectTeacherCharts').get((req, res) => {
         }
     }).sort( { point: -1 } );
 })
+//-----------Lấy danh sách bài thi giáo viên đã tạo---------------
 indexRouter.route('/selectTeacherTestList').get((req, res) => {
     console.log(req.query.id);
     StudentExams.find({ examId: req.query.id }, function (err, list) {
@@ -200,6 +224,7 @@ indexRouter.route('/selectTeacherTestList').get((req, res) => {
         }
     });
 })
+//-----------Lấy lịch sử làm baicf của học sinh---------------
 indexRouter.route('/selectstudenthistoryexam').get((req, res) => {
     console.log(req.query.id);
     StudentExams.find({ studentId: req.query.id }, function (err, list) {
@@ -381,4 +406,4 @@ indexRouter.route('/signup').post(function (req,res,next) {
         })
     }
 })
-module.exports = indexRouter;
+module.exports = indexRouter

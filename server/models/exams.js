@@ -6,5 +6,8 @@ var schema=new Schema({
     title:{type:String, require:true},
     creator:{type:String, require:true},
     subject:{type:String, require:true},
+    time:{type:String, require:true},
+    number:{type:Number, require:true},
+    object:{type:String, require:true},
 });
 module.exports=mongoose.model('Exams',schema);
