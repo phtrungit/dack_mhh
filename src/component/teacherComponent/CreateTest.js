@@ -51,6 +51,7 @@ class EditTestComponent extends Component {
             soCauHoi:'',
             time:'',
             subject:'Toán',
+            numberOfQuestion:[],
         }
         this.handleSubmit = this.handleSubmit.bind(this)
         this.handleChange = this.handleChange.bind(this)
@@ -92,7 +93,8 @@ class EditTestComponent extends Component {
                 var data = res.data;
                 console.log(data);
                 this.setState({
-                        data: data,
+                        data: data.exam,
+                        numberOfQuestion:data.numberOfQuestion
                     }
                 )
             });
@@ -103,7 +105,8 @@ class EditTestComponent extends Component {
                 var data = res.data;
                 console.log(data);
                 this.setState({
-                        data: data,
+                        data: data.exam,
+                        numberOfQuestion:data.numberOfQuestion
                     }
                 )
             });
@@ -144,7 +147,7 @@ class EditTestComponent extends Component {
                                             </TableRow>
                                         </TableHead>
                                         <TableBody>
-                                            {this.state.data.map(row => {
+                                            {this.state.data.map((row,index) => {
                                                 return (
                                                     <TableRow key={row.id}>
                                                         <TableCell component="th" scope="row">
@@ -154,7 +157,7 @@ class EditTestComponent extends Component {
                                                         <TableCell align="left"> {row.subject}</TableCell>
                                                         <TableCell >{row.time}</TableCell>
                                                         <TableCell>{row.number}</TableCell>
-                                                        <TableCell>{row.number}</TableCell>
+                                                        <TableCell>{this.state.numberOfQuestion[index]}</TableCell>
                                                         <TableCell align="left">
                                                             <Button color="primary">
                                                                 Chỉnh sửa

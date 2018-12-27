@@ -67,7 +67,7 @@ class EditTestComponent extends Component {
                 var data = res.data;
                 console.log(data);
                 this.setState({
-                        data: data,
+                        data: data.exam,
                     }
                 )
             });

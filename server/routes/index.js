@@ -19,28 +19,6 @@ app.use(bodyParser.json({
 }))
 
 
-/* GET home page. */
-/*indexRouter.route('/user').get(function (req, res) {
-    User.find(function (err, serverports){
-        if(err){
-            console.log(err);
-        }
-        else {
-            res.json(serverports);
-        }
-    });
-});
-
-indexRouter.route('/product').get(function (req, res) {
-    Product.find(function (err, serverports){
-        if(err){
-            console.log(err);
-        }
-        else {
-            res.json(serverports);
-        }
-    });
-});*/
 // -------------------- Tạo đề thi----------------
 indexRouter.route('/createExam').post(function (req,res,next) {
     console.log('reqbodyCreateExam',req.body);
@@ -85,15 +63,31 @@ indexRouter.route('/createQuestion').post(function (req,res,next) {
 
 })
 
-// -------------------- Lấy nội dung bài test bằng id của giáo viên ----------------
-indexRouter.route('/selectExam').get((req, res) => {
+// -------------------- Lấy nội dung bài test giáo viên đã tạo bằng id của giáo viên ----------------
+indexRouter.route('/selectExam').get(async (req, res) => {
     var id = req.query.id;
-    Exams.find({creator: id} ,(err, serverports) => {
+    let numberOfQuestion=[]
+    await Exams.find({creator: id} ,async (err, serverports) => {
         if (err) {
             console.log(err);
         }
         else {
-            res.json(serverports);
+            for (let i=0;i<serverports.length;i++)
+            {
+                await Questions.find({ examId: serverports[i].id }, function (err, data) {
+                    if (err) {
+                        numberOfQuestion[i]=0
+                    }
+                    else {
+                        numberOfQuestion[i]=data.length
+                    }
+                })
+            }
+            console.log(numberOfQuestion)
+            res.json({
+                exam:serverports,
+                numberOfQuestion:numberOfQuestion
+            });
         }
     })
 })
@@ -176,14 +170,28 @@ indexRouter.route('/updateResultTest').post(async function (req, res) {
 })
 
 //-----------Lấy đề thi---------------
-indexRouter.route('/selectAllExam').get((req, res) => {
-    Exams.find((err, serverports) => {
+indexRouter.route('/selectAllExam').get(async (req, res) => {
+    let listExam=[]
+    await Exams.find(async (err, serverports) => {
         if (err) {
             console.log(err);
         }
         else {
-            //console.log(serverports)
-            res.json(serverports);
+            for (let i=0;i<serverports.length;i++)
+            {
+                await Questions.find({ examId: serverports[i].id }, function (err, data) {
+                    if (err) {
+
+                    }
+                    else {
+                        if(data.length>0)
+                            listExam.push(serverports[i])
+                    }
+                })
+
+            }
+            console.log(listExam)
+            res.json(listExam)
         }
     })
 })
