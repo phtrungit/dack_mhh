@@ -82,17 +82,10 @@ class SignIn extends React.Component{
                 console.log('response',response)
                 if (response.data.user) {
                     this.props.login(response.data.user)
-                    if(response.data.user.id.substr(0,2)==='ST')
-                    {
                         this.setState({
                             redirectTo: '/'
                         })
-                    }else
-                    {
-                        this.setState({
-                            redirectTo: '/t'
-                        })
-                    }
+
 
                 }else {
                     console.log("errorSignIn")

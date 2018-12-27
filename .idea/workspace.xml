@@ -2,7 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ed15effd-c497-4fd2-a157-b44227468885" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/component/studentComponent/HeaderStudent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/studentComponent/HeaderStudent.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/component/HomePage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/CoursePageComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/CoursePageComponent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/FoooterComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/FooterComponent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/HeaderTeacher.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/teacherComponent/HeaderTeacher.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/HomePageTeacher.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/ListExamTeacher.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/teacherComponent/ListExamTeacher.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/MyTestComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/teacherComponent/MyTestComponent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/SearchComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/SearchComponent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/SignInComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/SignInComponent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/StudentCharts.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/StudentCharts.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/TeacherCharts.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/TeacherCharts.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/studentComponent/DetailedTestAndResult.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/studentComponent/DetailedTestAndResult.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/studentComponent/HomePageStudent.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/studentComponent/ListExam.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/studentComponent/ListExam.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/studentComponent/StudentHistoryExam.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/studentComponent/StudentHistoryExam.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/studentComponent/TakeATest.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/studentComponent/TakeATest.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/teacherComponent/TeacherTestList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/teacherComponent/TeacherTestList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/index.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -16,11 +34,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="HeaderStudent.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="HeaderStudent.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/component/studentComponent/HeaderStudent.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="188">
-              <caret line="48" column="17" lean-forward="true" selection-start-line="48" selection-start-column="17" selection-end-line="48" selection-end-column="17" />
+            <state relative-caret-position="179">
+              <caret line="16" column="5" lean-forward="true" selection-start-line="8" selection-start-column="3" selection-end-line="16" selection-end-column="5" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -28,11 +46,88 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/actions/index.js">
+      <file leaf-file-name="HeaderTeacher.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/component/teacherComponent/HeaderTeacher.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="219">
+              <caret line="15" column="14" lean-forward="true" selection-start-line="15" selection-start-column="14" selection-end-line="15" selection-end-column="14" />
+              <folding>
+                <element signature="e#0#41#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MyTestComponent.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/component/teacherComponent/MyTestComponent.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="234">
+              <caret line="14" column="28" lean-forward="true" selection-start-line="14" selection-start-column="28" selection-end-line="14" selection-end-column="28" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ListExamTeacher.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/component/teacherComponent/ListExamTeacher.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="324">
+              <caret line="75" column="15" selection-start-line="75" selection-start-column="15" selection-end-line="75" selection-end-column="15" />
+              <folding>
+                <element signature="e#0#41#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="HomePage.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/component/HomePage.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="18">
+              <caret line="9" column="30" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="30" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="StudentCharts.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/component/StudentCharts.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="17" column="42" selection-start-line="17" selection-start-column="42" selection-end-line="17" selection-end-column="42" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="HomeComponent.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/component/HomeComponent.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <folding>
+                <element signature="e#0#41#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TeacherCharts.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/component/TeacherCharts.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="126">
-              <caret line="7" column="2" lean-forward="true" selection-start-line="7" selection-start-column="2" selection-end-line="7" selection-end-column="2" />
+              <caret line="85" column="87" lean-forward="true" selection-start-line="85" selection-start-column="18" selection-end-line="85" selection-end-column="87" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/routes/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="5" column="33" selection-start-line="5" selection-start-column="33" selection-end-line="5" selection-end-column="33" />
             </state>
           </provider>
         </entry>
@@ -40,8 +135,8 @@
       <file leaf-file-name="SignInComponent.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/component/SignInComponent.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="125">
-              <caret line="143" column="59" lean-forward="true" selection-start-line="143" selection-start-column="31" selection-end-line="143" selection-end-column="59" />
+            <state relative-caret-position="143">
+              <caret line="87" lean-forward="true" selection-start-line="87" selection-end-line="87" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -84,16 +179,12 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/server/passport/index.js" />
-        <option value="$PROJECT_DIR$/server/passport/googleStrategy.js" />
-        <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/src/actions/index.js" />
         <option value="$PROJECT_DIR$/src/component/HomeComponent.js" />
         <option value="$PROJECT_DIR$/src/component/SnackBar.js" />
         <option value="$PROJECT_DIR$/server/passport/localStrategy.js" />
         <option value="$PROJECT_DIR$/src/component/ListExamTeacher.js" />
         <option value="$PROJECT_DIR$/src/component/HomePageTeacher.js" />
-        <option value="$PROJECT_DIR$/src/component/HomePage.js" />
         <option value="$PROJECT_DIR$/src/routes/privateRoute.js" />
         <option value="$PROJECT_DIR$/src/component/SignUpComponent.js" />
         <option value="$PROJECT_DIR$/server/validation/register.js" />
@@ -105,14 +196,12 @@
         <option value="$PROJECT_DIR$/src/reducers/authReducer.js" />
         <option value="$PROJECT_DIR$/src/reducers/errorReducer.js" />
         <option value="$PROJECT_DIR$/src/reducers/index.js" />
-        <option value="$PROJECT_DIR$/src/component/SignInComponent.js" />
         <option value="$PROJECT_DIR$/src/actions/authActions.js" />
         <option value="$PROJECT_DIR$/server/server.js" />
         <option value="$PROJECT_DIR$/src/reducers/auth.js" />
         <option value="$PROJECT_DIR$/src/store/index.js" />
         <option value="$PROJECT_DIR$/src/App.js" />
         <option value="$PROJECT_DIR$/src/index.js" />
-        <option value="$PROJECT_DIR$/src/component/HeaderTeacher.js" />
         <option value="$PROJECT_DIR$/src/component/HomePageStudent.js" />
         <option value="$PROJECT_DIR$/src/component/teacherComponent/EditTest.js" />
         <option value="$PROJECT_DIR$/src/styles/courses_styles.css" />
@@ -123,18 +212,24 @@
         <option value="$PROJECT_DIR$/src/styles/teachers_styles.css" />
         <option value="$PROJECT_DIR$/src/component/HeaderComponent.js" />
         <option value="$PROJECT_DIR$/src/component/TakeATest.js" />
-        <option value="$PROJECT_DIR$/src/routes/index.js" />
         <option value="$PROJECT_DIR$/src/styles/detailed_exam_questions.css" />
         <option value="$PROJECT_DIR$/server/routes/index.js" />
         <option value="$PROJECT_DIR$/src/styles/test_styles.css" />
         <option value="$PROJECT_DIR$/src/component/ListExamComponent.js" />
         <option value="$PROJECT_DIR$/src/component/studentComponent/StudentHistoryExam.js" />
-        <option value="$PROJECT_DIR$/src/component/TeacherCharts.js" />
-        <option value="$PROJECT_DIR$/src/component/StudentCharts.js" />
         <option value="$PROJECT_DIR$/src/component/DetailedExamQuestions.js" />
         <option value="$PROJECT_DIR$/src/component/studentComponent/TakeATest.js" />
         <option value="$PROJECT_DIR$/src/component/studentComponent/DetailedExamQuestions.js" />
         <option value="$PROJECT_DIR$/src/component/studentComponent/HeaderStudent.js" />
+        <option value="$PROJECT_DIR$/src/component/teacherComponent/TeacherTestList.js" />
+        <option value="$PROJECT_DIR$/src/component/HeaderTeacher.js" />
+        <option value="$PROJECT_DIR$/src/component/TeacherCharts.js" />
+        <option value="$PROJECT_DIR$/src/component/StudentCharts.js" />
+        <option value="$PROJECT_DIR$/src/routes/index.js" />
+        <option value="$PROJECT_DIR$/src/component/SignInComponent.js" />
+        <option value="$PROJECT_DIR$/src/component/HomePage.js" />
+        <option value="$PROJECT_DIR$/src/component/teacherComponent/HeaderTeacher.js" />
+        <option value="$PROJECT_DIR$/src/component/teacherComponent/MyTestComponent.js" />
       </list>
     </option>
   </component>
@@ -178,36 +273,7 @@
             <path>
               <item name="dack_mhh" type="b2602c69:ProjectViewProjectNode" />
               <item name="dack_mhh" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="dack_mhh" type="b2602c69:ProjectViewProjectNode" />
-              <item name="dack_mhh" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-              <item name="models" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="dack_mhh" type="b2602c69:ProjectViewProjectNode" />
-              <item name="dack_mhh" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-              <item name="routes" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="dack_mhh" type="b2602c69:ProjectViewProjectNode" />
-              <item name="dack_mhh" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-              <item name="seed" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="dack_mhh" type="b2602c69:ProjectViewProjectNode" />
-              <item name="dack_mhh" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="dack_mhh" type="b2602c69:ProjectViewProjectNode" />
-              <item name="dack_mhh" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="actions" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="dack_mhh" type="b2602c69:ProjectViewProjectNode" />
@@ -226,7 +292,20 @@
               <item name="dack_mhh" type="b2602c69:ProjectViewProjectNode" />
               <item name="dack_mhh" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="component" type="462c0819:PsiDirectoryNode" />
+              <item name="teacherComponent" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="dack_mhh" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dack_mhh" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="reducers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="dack_mhh" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dack_mhh" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="routes" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -250,6 +329,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\Study\Mhh\dack_mhh\src\component\teacherComponent" />
       <recent name="E:\Study\Mhh\dack_mhh\src\component\studentComponent" />
       <recent name="E:\Study\CNMTPTPM\dack_mhh\src" />
     </key>
@@ -286,12 +366,13 @@
       <workItem from="1545360958096" duration="841000" />
       <workItem from="1545375340508" duration="22297000" />
       <workItem from="1545555008722" duration="8487000" />
-      <workItem from="1545731042451" duration="22865000" />
+      <workItem from="1545731042451" duration="25081000" />
+      <workItem from="1545873563578" duration="1972000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="135226000" />
+    <option name="totallyTimeSpent" value="139414000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
@@ -321,19 +402,19 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32954547" />
+      <window_info anchor="bottom" id="Version Control" order="10" />
+      <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.32954547" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Version Control" order="10" />
-      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32954547" />
       <window_info id="Favorites" order="3" side_tool="true" />
     </layout-to-restore>
   </component>
@@ -349,12 +430,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/App.test.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/passport.js" />
-    <entry file="file://$PROJECT_DIR$/src/actions/authActions.js" />
-    <entry file="file://$PROJECT_DIR$/src/reducers/authReducer.js" />
     <entry file="file://$PROJECT_DIR$/server/server.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="455">
@@ -386,16 +461,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="352">
           <caret line="41" column="8" selection-start-line="41" selection-start-column="8" selection-end-line="41" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/component/HomePageTeacher.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="8" column="47" lean-forward="true" selection-start-line="8" selection-start-column="47" selection-end-line="8" selection-end-column="47" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -496,31 +561,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/component/teacherComponent/EditTest.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="93" selection-start-line="93" selection-end-line="93" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/models/studentExams.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/server/seed/questions.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/component/Answers.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1296">
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/component/Answers.js" />
     <entry file="file://$PROJECT_DIR$/server/seed/exams.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
@@ -565,32 +612,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/component/HomeComponent.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1545">
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/component/HeaderTeacher.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-397">
-          <caret line="18" column="92" selection-start-line="18" selection-start-column="62" selection-end-line="18" selection-end-column="92" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/routes/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="4" column="61" lean-forward="true" selection-start-line="4" selection-start-column="61" selection-end-line="4" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/component/studentComponent/StudentHistoryExam.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="900">
@@ -611,26 +632,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/component/TeacherCharts.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="133" column="1" selection-start-line="121" selection-end-line="133" selection-end-column="1" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/component/StudentCharts.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="251">
-          <caret line="129" column="1" lean-forward="true" selection-start-line="129" selection-start-column="1" selection-end-line="129" selection-end-column="1" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/component/studentComponent/MyTest.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-4227" />
@@ -642,13 +643,6 @@
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/component/MyTestComponent.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="219">
-          <caret line="168" column="10" lean-forward="true" selection-start-line="168" selection-start-column="10" selection-end-line="168" selection-end-column="10" />
         </state>
       </provider>
     </entry>
@@ -669,16 +663,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/component/studentComponent/HomePageStudent.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-141">
-          <caret line="18" column="9" lean-forward="true" selection-start-line="15" selection-start-column="7" selection-end-line="18" selection-end-column="9" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/reducers/auth.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="233">
@@ -693,23 +677,134 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/component/SignInComponent.js">
+    <entry file="file://$PROJECT_DIR$/src/component/teacherComponent/EditTest.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="143" column="59" lean-forward="true" selection-start-line="143" selection-start-column="31" selection-end-line="143" selection-end-column="59" />
+        <state relative-caret-position="-1278">
+          <caret line="93" selection-start-line="93" selection-end-line="93" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/component/HomePageTeacher.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="8" column="47" lean-forward="true" selection-start-line="8" selection-start-column="47" selection-end-line="8" selection-end-column="47" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/component/teacherComponent/TeacherTestList.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="10" column="36" selection-start-line="10" selection-start-column="36" selection-end-line="10" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/component/teacherComponent/CreateTest.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-198">
+          <caret line="7" column="12" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/component/TeacherCharts.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="85" column="87" lean-forward="true" selection-start-line="85" selection-start-column="18" selection-end-line="85" selection-end-column="87" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/component/SignInComponent.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="143">
+          <caret line="87" lean-forward="true" selection-start-line="87" selection-end-line="87" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/component/studentComponent/HomePageStudent.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-648">
+          <caret line="10" column="42" lean-forward="true" selection-end-line="64" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/component/studentComponent/HeaderStudent.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="188">
-          <caret line="48" column="17" lean-forward="true" selection-start-line="48" selection-start-column="17" selection-end-line="48" selection-end-column="17" />
+        <state relative-caret-position="179">
+          <caret line="16" column="5" lean-forward="true" selection-start-line="8" selection-start-column="3" selection-end-line="16" selection-end-column="5" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/component/teacherComponent/HeaderTeacher.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="219">
+          <caret line="15" column="14" lean-forward="true" selection-start-line="15" selection-start-column="14" selection-end-line="15" selection-end-column="14" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/component/HomePage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="9" column="30" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/component/HomeComponent.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/component/StudentCharts.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="17" column="42" selection-start-line="17" selection-start-column="42" selection-end-line="17" selection-end-column="42" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/routes/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="5" column="33" selection-start-line="5" selection-start-column="33" selection-end-line="5" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/component/teacherComponent/ListExamTeacher.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="75" column="15" selection-start-line="75" selection-start-column="15" selection-end-line="75" selection-end-column="15" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/component/teacherComponent/MyTestComponent.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="14" column="28" lean-forward="true" selection-start-line="14" selection-start-column="28" selection-end-line="14" selection-end-column="28" />
         </state>
       </provider>
     </entry>

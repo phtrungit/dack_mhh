@@ -5,7 +5,7 @@ import PopularComponent from './PopularComponent'
 import RegisterComponent from './RegisterComponent'
 import ServiceComponent from './ServiceComponent'
 import EventsComponent from './EventsComponent'
-import FoooterComponent from './FoooterComponent'
+import FooterComponent from './FooterComponent'
 
 class CoursePageComponent extends Component {
     render() {
@@ -18,7 +18,7 @@ class CoursePageComponent extends Component {
                 </div>
 
                 <PopularComponent></PopularComponent>
-                <FoooterComponent></FoooterComponent>
+                <FooterComponent></FooterComponent>
             </div>
         );
     }

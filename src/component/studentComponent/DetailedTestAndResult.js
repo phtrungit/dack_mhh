@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import '../../App.css';
 import HeaderComponent from './HeaderStudent.js'
-import FoooterComponent from '../FoooterComponent.js'
+import FooterComponent from '../FooterComponent.js'
 import '../../styles/test_styles.css'
 import {connect} from "react-redux";
 import { Link} from 'react-router-dom'

@@ -9,7 +9,8 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import Header from './studentComponent/HeaderStudent';
-import Footer from './FoooterComponent';
+import HeaderTeacher from './teacherComponent/HeaderTeacher'
+import Footer from './FooterComponent';
 import axios from 'axios';
 import { compose } from 'redux'
 import {connect} from "react-redux";
@@ -82,7 +83,8 @@ class SimpleTable extends React.Component{
             const {classes} = this.props;
             return (
                 <div>
-                    <Header/>
+                    {this.props.users.id.substr(0,2)==='TC'?<HeaderTeacher/>:<Header/>}
+
                     <div className={classes.title}>
                         Bảng xếp hạng giáo viên
                     </div>

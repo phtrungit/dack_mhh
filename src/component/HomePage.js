@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
-import HeaderComponent from './HeaderStudent'
-import HomeComponent from '../HomeComponent'
-import PopularComponent from '../PopularComponent'
-import RegisterComponent from '../RegisterComponent'
-import ServiceComponent from '../ServiceComponent'
-import EventsComponent from '../EventsComponent'
-import FoooterComponent from '../FoooterComponent'
-import SearchComponent from '../SearchComponent'
+import HeaderStudent from './studentComponent/HeaderStudent'
+import HeaderTeacher from './teacherComponent/HeaderTeacher'
+import HomeComponent from './HomeComponent'
+import PopularComponent from './PopularComponent'
+import RegisterComponent from './RegisterComponent'
+import ServiceComponent from './ServiceComponent'
+import EventsComponent from './EventsComponent'
+import FooterComponent from './FooterComponent'
+import SearchComponent from './SearchComponent'
 import {connect} from "react-redux";
 import { Redirect} from 'react-router-dom'
 
@@ -19,7 +20,7 @@ class HomePageStudent extends Component {
         {
             return (
                 <div className="App">
-                    <HeaderComponent></HeaderComponent>
+                    {this.props.users.id.substr(0,2)==='TC'?<HeaderTeacher/>:<HeaderStudent/>}
                     <HomeComponent></HomeComponent>
                     <div class="row">
                         <div class="col-sm-2">
@@ -45,7 +46,7 @@ class HomePageStudent extends Component {
                     <RegisterComponent></RegisterComponent>
                     <ServiceComponent></ServiceComponent>
                     <EventsComponent></EventsComponent>
-                    <FoooterComponent></FoooterComponent>
+                    <FooterComponent></FooterComponent>
                 </div>
             );
         }

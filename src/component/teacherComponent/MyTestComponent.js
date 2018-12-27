@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import '../styles/navbarStyle.css';
+import '../../styles/navbarStyle.css';
 
 var tabData = [
     { name: 'Toán', isActive: true },

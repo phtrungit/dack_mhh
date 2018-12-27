@@ -9,7 +9,7 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import Header from './HeaderStudent';
-import Footer from '../FoooterComponent';
+import Footer from '../FooterComponent';
 import { compose } from 'redux'
 import {connect} from "react-redux";
 import { Redirect} from 'react-router-dom'
