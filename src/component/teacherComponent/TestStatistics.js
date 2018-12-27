@@ -11,6 +11,9 @@ import Paper from '@material-ui/core/Paper';
 import Header from './HeaderTeacher';
 import Footer from '../FooterComponent';
 import axios from 'axios';
+import { Redirect} from 'react-router-dom'
+import {connect} from "react-redux";
+import {compose} from "redux";
 const styles = theme => ({
     root: {
         width: '100%',
@@ -71,58 +74,66 @@ class SimpleTable extends React.Component{
     }
 
     render(){
-        const {classes}=this.props;
-        return (
-            <div>
-                <Header/>
-                <div className={classes.title}>
-                    Danh sách học sinh tham gia bài thi {this.props.match.params.id}
+        if(this.props.isLogin===false)
+            return <Redirect to={'/login'}/>
+        else {
+            const {classes} = this.props;
+            return (
+                <div>
+                    <Header/>
+                    <div className={classes.title}>
+                        Danh sách học sinh tham gia bài thi {this.props.match.params.id}
+                    </div>
+                    <Paper className={classes.root}>
+                        <Table className={classes.table}>
+                            <TableHead>
+                                <TableRow>
+                                    <TableCell>Mã học sinh</TableCell>
+                                    <TableCell>Tên học sinh</TableCell>
+                                    <TableCell>Tên tài khoảng</TableCell>
+                                    <TableCell>Điểm</TableCell>
+                                    <TableCell>Xem bài làm</TableCell>
+                                </TableRow>
+                            </TableHead>
+                            <TableBody>
+                                {this.state.exam.data.map(row => {
+                                    return (
+                                        <TableRow key={row.id}>
+                                            <TableCell component="th" scope="row">
+                                                {row.id}
+                                            </TableCell>
+                                            <TableCell> {row.displayName}</TableCell>
+                                            <TableCell> {row.username}</TableCell>
+                                            <TableCell> {row.score}</TableCell>
+                                            <TableCell>
+                                                <Button color="primary" onClick={e => this.getExamStudent(e, row)}>
+                                                    Xem
+                                                </Button>
+                                            </TableCell>
+                                        </TableRow>
+                                    );
+                                })}
+                            </TableBody>
+                        </Table>
+                    </Paper>
+                    <Footer/>
                 </div>
-                <Paper className={classes.root}>
-                    <Table className={classes.table}>
-                        <TableHead>
-                            <TableRow>
-                                <TableCell>Mã học sinh</TableCell>
-                                <TableCell >Tên học sinh</TableCell>
-                                <TableCell >Tên tài khoảng</TableCell>
-                                <TableCell >Điểm</TableCell>
-                                <TableCell >Xem bài làm</TableCell>
-                            </TableRow>
-                        </TableHead>
-                        <TableBody>
-                            {this.state.exam.data.map(row => {
-                                return (
-                                    <TableRow key={row.id}>
-                                        <TableCell component="th" scope="row">
-                                            {row.id}
-                                        </TableCell>
-                                        <TableCell> {row.displayName}</TableCell>
-                                        <TableCell> {row.username}</TableCell>
-                                        <TableCell> {row.score}</TableCell>
-                                        <TableCell>
-                                            <Button color="primary" onClick={e => this.getExamStudent(e, row)}>
-                                                Xem
-                                            </Button>
-                                        </TableCell>
-                                    </TableRow>
-                                );
-                            })}
-                        </TableBody>
-                    </Table>
-                </Paper>
-                <Footer/>
-            </div>
 
-        );
+            );
+        }
     }
 }
 const mapStateToProps =(state) =>{
 
 
     return{
-        users: state.auth.currentUser
+        users: state.auth.currentUser,
+        isLogin:state.auth.isLogin
     };
 
 }
 
-export default withStyles(styles)(SimpleTable);
+export default compose(
+    connect(mapStateToProps),
+    withStyles(styles)
+)(SimpleTable);

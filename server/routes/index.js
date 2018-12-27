@@ -188,7 +188,6 @@ indexRouter.route('/selectAllExam').get(async (req, res) => {
                             listExam.push(serverports[i])
                     }
                 })
-
             }
             console.log(listExam)
             res.json(listExam)
