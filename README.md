@@ -18,4 +18,7 @@ Server run in port 4200
 Runs the app in the development mode.<br>
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-### `*Danh sách tài khoản dùng để đăng nhập nằm trong đường dẫn server/seed`
+### `*Danh sách tài khoản dùng để đăng nhập:`
+Role----username--password
+Student:taikhoan1-matkhau1
+Teacher:taikhoan11-matkhau11
