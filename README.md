@@ -20,6 +20,6 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 ### `*Danh sách tài khoản dùng để đăng nhập:`
 
-Role----username--password
+Role:username-password    
 Student:taikhoan1-matkhau1
 Teacher:taikhoan11-matkhau11
