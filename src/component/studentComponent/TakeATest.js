@@ -75,9 +75,10 @@ class TestComponent extends Component {
             return <Redirect to={'/login'}/>
         else {
             return (
-
+                <div>
+                <HeaderComponent/>
                 <div className="container mt-30 color_black ">
-                    <HeaderComponent/>
+
                     <div className="row ">
                         <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                             <div className="test_center">
@@ -133,60 +134,11 @@ class TestComponent extends Component {
 
                             <p className="color_black"></p>
                         </div>
-                        <div className="col-xs-3 col-sm-3 col-md-3 col-lg-3 mt-30 ">
-                            <div className="test_center cau_hoi2">
-                                Các đề thi liên quan
-                            </div>
 
-
-                            <div className="  mt-3">
-                                <div className="">
-                                    <img className="images_gioithieu ml-3" src={require('../../images/course_1.jpg')}
-                                         alt="https://unsplash.com/@kellybrito"/>
-                                    <div className=" text-center ml-3">
-                                        <div className=""><a href="courses.html">A complete guide to design</a></div>
-                                        <div className="">Adobe Guide, Layes, Smart Objects etc...</div>
-                                    </div>
-                                    <div className="khung3 d-flex flex-row align-items-center ml-3">
-                                        <div className="course_author_image">
-                                            <img src={require('../../images/author.jpg')}
-                                                 alt="https://unsplash.com/@mehdizadeh"/>
-                                        </div>
-                                        <div className="">Michael Smith, <span>Author</span></div>
-                                        <div
-                                            className="course_price d-flex flex-column align-items-center justify-content-center">
-                                            <span>$29</span></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div className="  mt-3">
-                                <div className="">
-                                    <img className="images_gioithieu ml-3" src={require('../../images/course_2.jpg')}
-                                         alt="https://unsplash.com/@kellybrito"/>
-                                    <div className=" text-center ml-3">
-                                        <div className=""><a href="courses.html">A complete guide to design</a></div>
-                                        <div className="">Adobe Guide, Layes, Smart Objects etc...</div>
-                                    </div>
-                                    <div className="khung3 d-flex flex-row align-items-center ml-3">
-                                        <div className="course_author_image">
-                                            <img src={require('../../images/author.jpg')}
-                                                 alt="https://unsplash.com/@mehdizadeh"/>
-                                        </div>
-                                        <div className="">Michael Smith, <span>Author</span></div>
-                                        <div
-                                            className="course_price d-flex flex-column align-items-center justify-content-center">
-                                            <span>$29</span></div>
-                                    </div>
-                                </div>
-                            </div>
-
-
-                        </div>
 
                     </div>
                 </div>
-
+</div>
 
             );
         }
